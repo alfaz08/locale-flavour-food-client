@@ -16,7 +16,7 @@ const NavBarTwo = () => {
 
   return (
     <div>
-      <div className="navbar mt-2 p-2">
+      <div className="navbar  p-2 bg-green-200">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const NavBarTwo = () => {
 
 
     <div>
-      <img className=" w-40 h-28" src="https://i.ibb.co/7n02R0B/Green-Modern-Organic-Health-Food-Logo-1-removebg-preview.png" alt="" />
+      <img className=" w-40 h-28" src="https://i.ibb.co/X8zVkt2/Green-Modern-Organic-Health-Food-Logo-1-removebg-preview.png" alt="" />
     </div>
     <Search></Search>
 
@@ -79,3 +79,12 @@ const NavBarTwo = () => {
 };
 
 export default NavBarTwo;
+
+
+
+
+// ## 📊 Github Stats
+
+// [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/0-profile-details.svg)](https://github.com/alfaz08)
+// [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/1-repos-per-language.svg)](https://github.com/alfaz08) [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+// [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/3-stats.svg)](https://github.com/alfaz08) [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/4-productive-time.svg)](https://github.com/alfaz08)

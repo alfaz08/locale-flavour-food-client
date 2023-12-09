@@ -10,7 +10,7 @@ const Home = () => {
         <title>Locale Food | Home</title>
       </Helmet>
       
-      <NavBarTwo></NavBarTwo>
+      
     </div>
   );
 };
