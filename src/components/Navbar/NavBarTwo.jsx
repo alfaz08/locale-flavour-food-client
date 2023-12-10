@@ -1,8 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Search from "../../shared/Search/Search";
-
+import useAuth from "../../hooks/useAuth";
+import {  toast } from "react-toastify";
 
 const NavBarTwo = () => {
+
+
+    const {user,logOut} =useAuth()
+   console.log(user);
+    const handleLogOut =()=>{
+      logOut()
+      .then(()=>
+      {
+       console.log('user logged out successfully')
+      })
+      .catch(error=>toast(error))
+    
+    }
 
    const navLinks =<>
          <li className="text-xl"><NavLink to="/">Home</NavLink></li>
@@ -49,23 +63,38 @@ const NavBarTwo = () => {
 
 
     
-  <div className="dropdown dropdown-end">
+  {
+    user?
+    <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <div className=" w-16 rounded-full">
+        {
+            user.photoURL ?
+            <img alt="Tailwind CSS Navbar component" src={user?.photoURL}  />
+            :
+            <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/37dj5GJ/blank-profile-picture-973460-960-720.jpg" />
+          }
         </div>
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
+        {user.displayName}
         </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+
+        <Link to='/dashboard/userHome'>
+        <li><a className="hover:bg-green-200">Dashboard</a></li>
+        </Link>
+
+        <li onClick={handleLogOut}><a className="hover:bg-green-200">Logout</a></li>
       </ul>
     </div>
+    :
+    <div>
+      <Link to="/login" className="text-2xl font-bold">Login</Link>
+    </div>
+  }
+
+
   </div>
 
 
@@ -83,8 +112,3 @@ export default NavBarTwo;
 
 
 
-// ## 📊 Github Stats
-
-// [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/0-profile-details.svg)](https://github.com/alfaz08)
-// [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/1-repos-per-language.svg)](https://github.com/alfaz08) [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-// [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/3-stats.svg)](https://github.com/alfaz08) [![](https://raw.githubusercontent.com/alfaz08/alfaz08/master/profile-summary-card-output/shades_of_purple/4-productive-time.svg)](https://github.com/alfaz08)

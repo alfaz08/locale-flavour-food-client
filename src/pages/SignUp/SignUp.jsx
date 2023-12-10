@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate} from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -13,6 +14,8 @@ const SignUp = () => {
   const {createUser,updateUserProfile} = useAuth()
   const [loggedIn,setLoggedIn]= useState(false)
   const axiosPublic =useAxiosPublic()
+  
+
   const {
     register,
     handleSubmit,
@@ -35,7 +38,9 @@ const SignUp = () => {
     try{
       const result = await createUser(data.email,data.password)
       const loggedUser = result.user;
-      await updateUserProfile(data.name,res.data.data.display_url)
+
+      await updateUserProfile(data.name, res.data.data.display_url);
+       console.log('updated');
       const userInfo ={
         email: data.email,
         name:data.name,
@@ -52,6 +57,7 @@ const SignUp = () => {
           timer: 500,
         });
         setLoggedIn(true)
+      
       }
     }catch(error){
       toast.error(error.message)
@@ -63,7 +69,13 @@ const SignUp = () => {
 
 
   return (
-    <div className="">
+    <>
+    <div>
+   
+   {
+    loggedIn && <Navigate to="/"></Navigate>
+   }
+  
 <div className="hero ">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
@@ -200,10 +212,15 @@ const SignUp = () => {
    
 <div>
 <SocialLogin></SocialLogin>
+
 </div>
 
 <ToastContainer/>
       </div>
+
+    
+    
+    </>
   
   );
 };

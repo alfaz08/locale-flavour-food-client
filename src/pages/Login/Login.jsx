@@ -1,7 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
 
@@ -27,6 +29,7 @@ const Login = () => {
 
 
   }
+
 
 
   return (
@@ -84,7 +87,7 @@ const Login = () => {
 
      </div>
    
-
+     
    
      
  
