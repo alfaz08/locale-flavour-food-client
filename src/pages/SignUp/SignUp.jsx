@@ -1,9 +1,18 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
-
+import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { ToastContainer, toast } from 'react-toastify';
+import Swal from "sweetalert2";
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const SignUp = () => {
+  const {createUser,updateUserProfile} = useAuth()
+  const [loggedIn,setLoggedIn]= useState(false)
+  const axiosPublic =useAxiosPublic()
   const {
     register,
     handleSubmit,
@@ -15,6 +24,41 @@ const SignUp = () => {
   const { name, email, password, image, accountType } = data;
 
     console.log(name, email, password, image, accountType);
+
+    const imageFile ={image: data.image[0]}
+    const res =await axiosPublic.post(image_hosting_api,imageFile,{
+      headers:{
+        "content-type": "multipart/form-data"
+      }
+    })
+   if(res.data.success){
+    try{
+      const result = await createUser(data.email,data.password)
+      const loggedUser = result.user;
+      await updateUserProfile(data.name,res.data.data.display_url)
+      const userInfo ={
+        email: data.email,
+        name:data.name,
+        roll:'customer',
+      }
+      const userRes = await axiosPublic.post('/users',userInfo)
+      if(userRes.data.insertedId){
+        console.log('user added to database');
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Sign up has been successful',
+          showConfirmButton: false,
+          timer: 500,
+        });
+        setLoggedIn(true)
+      }
+    }catch(error){
+      toast.error(error.message)
+      reset()
+    }
+   }
+
  }
 
 
@@ -158,7 +202,7 @@ const SignUp = () => {
 <SocialLogin></SocialLogin>
 </div>
 
-     
+<ToastContainer/>
       </div>
   
   );
