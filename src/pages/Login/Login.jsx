@@ -1,17 +1,31 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
+import { ToastContainer,toast } from "react-toastify";
 
 const Login = () => {
 
-  
+  const {signIn} =useAuth()
+  const navigate =useNavigate()
+  const location =useLocation()
 
 
   const handleLogin=e=>{
     e.preventDefault();
-    const email =e.target.email.value;
-    const password =e.target.password.value;
-    console.log(email,password);
+  const email =e.target.email.value;
+  const password =e.target.password.value;
+  // console.log(email,password);
+  signIn(email,password)
+  .then(res=>{console.log(res.user)
+    navigate(location?.state?location.state:'/')
+   }) 
+   .catch(error=>{
+    console.log(error)
+    toast.error(error.message)
+    e.target.reset()
+   })
+
+
   }
 
 
@@ -75,7 +89,7 @@ const Login = () => {
      
  
     </div>
-
+    <ToastContainer></ToastContainer>
     </div>
 
   );
