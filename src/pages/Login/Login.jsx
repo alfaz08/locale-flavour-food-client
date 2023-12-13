@@ -3,6 +3,7 @@ import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -33,7 +34,11 @@ const Login = () => {
 
 
   return (
+    
     <div className="container mx-auto">
+       <Helmet>
+        <title>Locale Food | Login</title>
+      </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-4 lg:ml-36 ">
      <div className="hidden lg:block ">
        <img className="h-[530px] w-[420px] mt-32" src="https://i.ibb.co/DKWxY2N/login.png" alt="" />
