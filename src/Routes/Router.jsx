@@ -9,6 +9,7 @@ import PrivateRoute from "../Routes/PrivateRoute"
 import UserHome from "../pages/Dashboard/User/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 import VendorHome from "../pages/Dashboard/Vendor/VendorHome/VendorHome"
+import VendorPayment from "../components/VendorPayment/VendorPayment";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       
       path:"signUp",
     element: <SignUp></SignUp>
+    },
+    {
+      path:"member",
+      element: <VendorPayment></VendorPayment>
     }
    ]
   },
@@ -39,6 +44,10 @@ const router = createBrowserRouter([
       //for all users
       {
         path:'userHome',
+        element: <UserHome></UserHome>,
+      },
+      {
+        path:'addProduct',
         element: <UserHome></UserHome>,
       },
 

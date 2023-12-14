@@ -6,7 +6,7 @@ import {  toast } from "react-toastify";
 const NavBarTwo = () => {
 
    const isAdmin = false
-   const isVendor = true
+   const isVendor = false
     const {user,logOut} =useAuth()
    console.log(user);
     const handleLogOut =()=>{
@@ -21,8 +21,15 @@ const NavBarTwo = () => {
 
    const navLinks =<>
          <li className="text-xl"><NavLink to="/">Home</NavLink></li>
-         <li className="text-xl"><NavLink to="/login">Login</NavLink></li>
-         <li className="text-xl"><NavLink to="/signUp">SignUp</NavLink></li>
+         {
+          isVendor ?
+          null
+          :
+          <li className="text-xl"><NavLink to="/member">Become a vendor</NavLink></li>
+        
+          
+         }
+         
 
    
    </>
@@ -92,16 +99,16 @@ const NavBarTwo = () => {
         {
         isAdmin ?
         <Link to='/dashboard/adminHome'>
-        <li><a className="hover:bg-warning">Dashboard</a></li>
+        <li><a className="hover:bg-green-200">Dashboard</a></li>
         </Link>
         :
         isVendor ?
         <Link to='/dashboard/vendorHome'>
-        <li><a className="hover:bg-warning">Dashboard</a></li>
+        <li><a className="hover:bg-green-200">Dashboard</a></li>
         </Link>
         :
         <Link to='/dashboard/userHome'>
-        <li><a className="hover:bg-warning">Dashboard</a></li>
+        <li><a className="hover:bg-green-200">Dashboard</a></li>
         </Link>
        }
 
@@ -110,7 +117,7 @@ const NavBarTwo = () => {
     </div>
     :
     <div>
-      <Link to="/login" className="text-2xl font-bold">Login</Link>
+      <Link to="/login" className="text-2xl font-bold">Join Now</Link>
     </div>
   }
 
