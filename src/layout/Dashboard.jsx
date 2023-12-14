@@ -1,6 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaAd, FaCalendar, FaHome, FaList, FaSearch, FaShoppingCart,FaUtensils, FaBook, FaUser } from "react-icons/fa";
+import { FaBoxOpen } from "react-icons/fa6";
+import useAuth from "../hooks/useAuth";
+
+
+
 const Dashboard = () => {
+
+  const {user} =useAuth()
+  console.log(user.photoURL);
+
 
  const isAdmin =false
  const isVendor =true
@@ -49,16 +58,20 @@ const Dashboard = () => {
       :
       isVendor ?
       <>
+      <li>
+              <img src={user.photoURL} className="h-40 w-40 rounded-full ml-6" alt="" />
+            </li>
        <li>
               <NavLink to="/dashboard/vendorHome">
-              <FaHome></FaHome>
-                Vendor Home
+              <FaHome className="text-2xl"></FaHome>
+                <h2 className="font-bold">Home</h2>
                 </NavLink>
             </li>
             <li>
               <NavLink to="/dashboard/addProduct">
-              <FaCalendar></FaCalendar>
-                Add Product
+              <FaBoxOpen className="text-2xl" />
+            <h2 className=" font-bold"> Add Product</h2>
+               
                 </NavLink>
             </li>
             <li>
