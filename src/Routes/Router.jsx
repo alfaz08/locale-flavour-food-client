@@ -10,6 +10,7 @@ import UserHome from "../pages/Dashboard/User/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 import VendorHome from "../pages/Dashboard/Vendor/VendorHome/VendorHome"
 import VendorPayment from "../components/VendorPayment/VendorPayment";
+import AddProduct from "../pages/Dashboard/Vendor/AddProduct/AddProduct";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -46,10 +47,7 @@ const router = createBrowserRouter([
         path:'userHome',
         element: <UserHome></UserHome>,
       },
-      {
-        path:'addProduct',
-        element: <UserHome></UserHome>,
-      },
+     
 
 
       //for admin
@@ -63,7 +61,12 @@ const router = createBrowserRouter([
       {
         path: 'vendorHome',
         element: <VendorHome></VendorHome>
-      }
+      },
+      {
+        path: 'addProduct',
+        element: <AddProduct></AddProduct>
+      },
+      
     ]
   }
    ]);

@@ -2,6 +2,8 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaAd, FaCalendar, FaHome, FaList, FaSearch, FaShoppingCart,FaUtensils, FaBook, FaUser } from "react-icons/fa";
 import { FaBoxOpen } from "react-icons/fa6";
 import useAuth from "../hooks/useAuth";
+import { FaDollarSign } from "react-icons/fa";
+
 
 
 
@@ -76,20 +78,21 @@ const Dashboard = () => {
             </li>
             <li>
               <NavLink to="/dashboard/cart">
-              <FaShoppingCart></FaShoppingCart>
-                My Cart
+              <FaShoppingCart className="text-2xl"></FaShoppingCart>
+                <h2 className="font-bold">My Product List</h2>
                 </NavLink>
             </li>
+            
             <li>
-              <NavLink to="/dashboard/review">
-              <FaAd></FaAd>
-                Add a Review
+              <NavLink to="/dashboard/bookings">
+              <FaList className="text-2xl"></FaList>
+                <h2 className="font-bold">Order List</h2>
                 </NavLink>
             </li>
             <li>
               <NavLink to="/dashboard/bookings">
-              <FaList></FaList>
-                Bookings
+              <FaDollarSign className="text-2xl"></FaDollarSign>
+                <h2 className="font-bold">Total Revenue</h2>
                 </NavLink>
             </li>
       </>
