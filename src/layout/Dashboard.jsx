@@ -31,34 +31,31 @@ const Dashboard = () => {
             </li>
        <li>
               <NavLink to="/dashboard/adminHome">
-              <FaHome></FaHome>
-                Admin Home
+              <FaHome className="text-2xl"></FaHome>
+                <h2 className="font-bold">Admin Home</h2>
                 </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/addItems">
-              <FaUtensils></FaUtensils>
-               Add Items
+              <NavLink to="/dashboard/allCustomer">
+              <FaUser className="text-2xl"></FaUser>
+                <h2 className="font-bold">All Customer</h2>
                 </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/manageItems">
-              <FaList></FaList>
-                Manage Items
+              <NavLink to="/dashboard/allVendor">
+              <FaUser className="text-2xl"></FaUser>
+               <h2 className="font-bold"> All Vendor</h2>
                 </NavLink>
             </li>
+            
+            
             <li>
               <NavLink to="/dashboard/bookings">
               <FaBook></FaBook>
                 Manage Bookings
                 </NavLink>
             </li>
-            <li>
-              <NavLink to="/dashboard/users">
-              <FaUser></FaUser>
-                All Users
-                </NavLink>
-            </li>
+            
       </>
       :
       isVendor ?
