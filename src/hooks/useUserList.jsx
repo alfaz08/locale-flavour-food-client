@@ -3,14 +3,14 @@ import useAxiosPublic from "./useAxiosPublic";
 
 const useUserList = () => {
   const axiosPublic =useAxiosPublic()
- const {data:user=[],isPending:loading,refetch} =useQuery({
-  queryKey:['user'],
+ const {data:users=[],isPending:loading,refetch} =useQuery({
+  queryKey:['users'],
   queryFn:async()=>{
     const res =await axiosPublic.get('/users')
     return res.data
   }
  })
- return[user,loading,refetch]
+ return[users,loading,refetch]
 };
 
 export default useUserList;

@@ -38,15 +38,10 @@ const Dashboard = () => {
             <li>
               <NavLink to="/dashboard/allCustomer">
               <FaUser className="text-2xl"></FaUser>
-                <h2 className="font-bold">All Customer</h2>
+                <h2 className="font-bold">Member List</h2>
                 </NavLink>
             </li>
-            <li>
-              <NavLink to="/dashboard/allVendor">
-              <FaUser className="text-2xl"></FaUser>
-               <h2 className="font-bold"> All Vendor</h2>
-                </NavLink>
-            </li>
+          
             
             
             <li>
