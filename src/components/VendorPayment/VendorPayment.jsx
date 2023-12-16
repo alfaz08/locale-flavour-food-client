@@ -44,7 +44,8 @@ const VendorPayment = () => {
       address: data.address,
       phone: data.number,
       image: res.data.data.display_url,
-      roll: 'vendor'
+      roll: 'vendor',
+      membership:'normal'
     }
    
     const patchRes = await axiosSecure.patch(`/users/email/${user?.email}`, updateInfo);

@@ -30,6 +30,7 @@ const VendorHome = () => {
         <p>Roll: {userInfo?.roll}</p>
         <p>Shop Address: {userInfo?.address}</p>
         <p>Shop Phone: {userInfo?.phone}</p>
+        <p>Membership: {userInfo?.membership}</p>
       </div>
     </div>
   );

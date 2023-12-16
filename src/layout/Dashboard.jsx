@@ -13,8 +13,8 @@ const Dashboard = () => {
   console.log(user.photoURL);
 
 
- const isAdmin =true
- const isVendor =false
+ const isAdmin =false
+ const isVendor =true
 
   return (
     <div className="flex">
