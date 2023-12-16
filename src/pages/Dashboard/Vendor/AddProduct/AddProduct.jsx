@@ -44,11 +44,10 @@ const userInfo =useProfile()
       const productInfo ={
         productName: data?.title,
         productImage: res.data.data.display_url,
-        productPrice:data?.price,
         productionCost:data?.cost,
         productQuantity:data?.quantity,
         profitMarin:data?.margin,
-        ProductPrice:(parseFloat(data?.cost)+((parseFloat(data?.margin)*parseFloat(data?.cost))/100)),
+        productPrice:(parseFloat(data?.cost)+((parseFloat(data?.margin)*parseFloat(data?.cost))/100)),
         productDetails:data?.des,
         productManufacturingDate: data?.date,
         productExpireDate: data?.expire,
