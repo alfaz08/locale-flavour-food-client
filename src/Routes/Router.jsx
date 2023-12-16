@@ -11,6 +11,7 @@ import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 import VendorHome from "../pages/Dashboard/Vendor/VendorHome/VendorHome"
 import VendorPayment from "../components/VendorPayment/VendorPayment";
 import AddProduct from "../pages/Dashboard/Vendor/AddProduct/AddProduct";
+import VendorProduct from "../pages/Dashboard/Vendor/VendorProduct/VendorProduct";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: 'addProduct',
         element: <AddProduct></AddProduct>
+      },
+      {
+        path: 'vendorProduct',
+        element: <VendorProduct></VendorProduct>
       },
       
     ]

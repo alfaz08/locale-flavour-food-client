@@ -45,6 +45,10 @@ const userInfo =useProfile()
         productName: data?.title,
         productImage: res.data.data.display_url,
         productPrice:data?.price,
+        productionCost:data?.cost,
+        productQuantity:data?.quantity,
+        profitMarin:data?.margin,
+        ProductPrice:(parseFloat(data?.cost)+((parseFloat(data?.margin)*parseFloat(data?.cost))/100)),
         productDetails:data?.des,
         productManufacturingDate: data?.date,
         productExpireDate: data?.expire,
@@ -80,7 +84,7 @@ const userInfo =useProfile()
     <>
     <div>
     <Helmet>
-        <title>Locale Food | SignUp</title>
+        <title>Locale Food | Add Product</title>
       </Helmet>
       <SectionTitle
         heading="add an item"
@@ -122,17 +126,54 @@ const userInfo =useProfile()
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Product Price</span>
+                  <span className="label-text">Product Quantity</span>
                 </label>
                 <input
                   type="number"
-                  name="price"
-                  {...register("price", { required: true })}
+                  name="quantity"
+                  {...register("quantity", { required: true })}
+                  placeholder="Description"
+                  className="input input-bordered border-green-300"
+                />
+               
+              </div>
+
+
+
+
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Production Cost</span>
+                </label>
+                <input
+                  type="number"
+                  name="cost"
+                  {...register("cost", { required: true })}
                   placeholder="Price"
                   className="input input-bordered border-green-300"
                 />
                
               </div>
+
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Profit Margin(%)</span>
+                </label>
+                <input
+                  type="number"
+                  name="margin"
+                  {...register("margin", { required: true })}
+                  placeholder="Price"
+                  className="input input-bordered border-green-300"
+                />
+               
+              </div>
+
+
+
+
 
               <div className="form-control">
                 <label className="label">
