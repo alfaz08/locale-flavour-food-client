@@ -84,13 +84,13 @@ const Dashboard = () => {
             </li>
             
             <li>
-              <NavLink to="/dashboard/bookings">
+              <NavLink to="/dashboard/vendorOrder">
               <FaList className="text-2xl"></FaList>
                 <h2 className="font-bold">Order List</h2>
                 </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/bookings">
+              <NavLink to="/dashboard/vendorRevenue">
               <FaDollarSign className="text-2xl"></FaDollarSign>
                 <h2 className="font-bold">Total Revenue</h2>
                 </NavLink>
