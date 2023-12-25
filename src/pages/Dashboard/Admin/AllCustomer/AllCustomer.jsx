@@ -1,16 +1,15 @@
-import { FaTrashAlt } from "react-icons/fa";
-import useUserList from "../../../../hooks/useUserList";
-import { FaUserShield } from "react-icons/fa";
-
-
+import React from 'react';
+import useAllCustomer from '../../../../hooks/useAllCustomer';
+import { FaUserShield } from 'react-icons/fa6';
+import { FaTrashAlt } from 'react-icons/fa';
 
 const AllCustomer = () => {
-  const [users] =useUserList()
-
+  const [allCustomer] =useAllCustomer()
+  console.log(allCustomer);
   return (
     <div>
        <div className="flex justify-evenly my-4">
-    <h2>User List: {users.length}</h2>
+    <h2>User List: {allCustomer?.length}</h2>
 
     </div>
     <div className="overflow-x-auto">
@@ -31,7 +30,7 @@ const AllCustomer = () => {
 
 
    {
-    users?.map((user,index)=>
+    allCustomer?.map((user,index)=>
       <tr key={user._id}>
       <th>{index+1}</th>
       <td>{user.name}</td>
