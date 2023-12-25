@@ -2,10 +2,45 @@ import React from 'react';
 import useAllCustomer from '../../../../hooks/useAllCustomer';
 import { FaUserShield } from 'react-icons/fa6';
 import { FaTrashAlt } from 'react-icons/fa';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const AllCustomer = () => {
-  const [allCustomer] =useAllCustomer()
+  const [allCustomer,refetch] =useAllCustomer()
   console.log(allCustomer);
+
+  const axiosSecure=useAxiosSecure()
+
+  const handleDelete = (email) =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result)=>{
+      if(result.isConfirmed){
+        axiosSecure.delete(`/users/customer/${email}`)
+        .then(res=>{
+          if(res.data.deletedCount>0){
+            refetch()
+            Swal.fire({
+              title:"Deleted",
+              text:"Your post has been deleted",
+              icon:"success"
+            })
+          }
+        })
+      }
+    })
+  }
+
+
+
+
+
   return (
     <div>
        <div className="flex justify-evenly my-4">
@@ -46,7 +81,7 @@ const AllCustomer = () => {
       </td>
       <th>
           <button
-          
+           onClick={()=>handleDelete(user?.email)}
            className="btn btn-ghost btn-lg">
          <FaTrashAlt className="text-red-600"></FaTrashAlt>
           </button>
