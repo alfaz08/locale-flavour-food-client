@@ -5,10 +5,40 @@ import { FaTrashAlt } from "react-icons/fa";
 import { FaUserShield } from "react-icons/fa";
 
 import { FaShopify } from "react-icons/fa";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 
 const AllVendor = () => {
-  const [allVendor] =useAllVendor()
+  const [allVendor,refetch] =useAllVendor()
+  const axiosSecure =useAxiosSecure()
+
+  const handleDelete = (email) =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result)=>{
+      if(result.isConfirmed){
+        axiosSecure.delete(`/users/vendor/${email}`)
+        .then(res=>{
+          if(res.data.deletedCount>0){
+            refetch()
+            Swal.fire({
+              title:"Deleted",
+              text:"Your post has been deleted",
+              icon:"success"
+            })
+          }
+        })
+      }
+    })
+  }
+
 
   return (
     <div>
@@ -52,7 +82,8 @@ const AllVendor = () => {
       <td>
           <button
           
-           className="btn btn-ghost btn-lg">
+           className="btn btn-ghost btn-lg"
+           onClick={()=>handleDelete(user?.email)}>
          <FaTrashAlt className="text-red-600"></FaTrashAlt>
           </button>
         </td>
