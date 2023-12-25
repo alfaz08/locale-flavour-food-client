@@ -5,8 +5,8 @@ import {  toast } from "react-toastify";
 
 const NavBarTwo = () => {
 
-   const isAdmin = false
-   const isVendor = true
+   const isAdmin = true
+   const isVendor = false
     const {user,logOut} =useAuth()
    console.log(user);
     const handleLogOut =()=>{

@@ -64,6 +64,10 @@ const router = createBrowserRouter([
         path:'allCustomer',
         element: <AllCustomer></AllCustomer>,
       },
+      {
+        path:'allVendor',
+        element: <AllVendor></AllVendor>
+      },
       
       //for verndor
 

@@ -12,6 +12,7 @@ const AdminHome = () => {
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-4'>
+      
       <div className='col-span-2'>
       <div className="card card-compact bg-base-100 shadow-xl justify-center items-center mt-20">
   <figure><img src={user?.photoURL} alt="Shoes" /></figure>

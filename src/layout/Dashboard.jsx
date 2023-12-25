@@ -13,8 +13,8 @@ const Dashboard = () => {
   console.log(user.photoURL);
 
 
- const isAdmin =false
- const isVendor =true
+ const isAdmin =true
+ const isVendor =false
 
   return (
     <div className="flex">
@@ -39,6 +39,12 @@ const Dashboard = () => {
               <NavLink to="/dashboard/allCustomer">
               <FaUser className="text-2xl"></FaUser>
                 <h2 className="font-bold">Member List</h2>
+                </NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/allVendor">
+              <FaUser className="text-2xl"></FaUser>
+                <h2 className="font-bold">Vendor List</h2>
                 </NavLink>
             </li>
           

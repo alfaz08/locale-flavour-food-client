@@ -10,7 +10,7 @@ const AllCustomer = () => {
   return (
     <div>
        <div className="flex justify-evenly my-4">
-    <h2>MyProduct: {users.length}</h2>
+    <h2>User List: {users.length}</h2>
 
     </div>
     <div className="overflow-x-auto">
