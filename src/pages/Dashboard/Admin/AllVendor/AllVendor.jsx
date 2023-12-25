@@ -4,6 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 import { FaUserShield } from "react-icons/fa";
 
+import { FaShopify } from "react-icons/fa";
 
 
 const AllVendor = () => {
@@ -24,7 +25,7 @@ const AllVendor = () => {
       <td>Name</td>
       <td>Roll</td>
       <td>Email</td>
-      <td>Make Admin</td>
+      <td>Shop Details</td>
       <td>Delete</td>
       
     </tr>
@@ -43,17 +44,21 @@ const AllVendor = () => {
       
    
       <td>
-       <button className="btn bg-green-400"><FaUserShield />
-
+       <button className="btn bg-green-400">
+       <FaShopify className="text-red-600"></FaShopify>
 </button>
       </td>
-      <th>
+
+      <td>
           <button
           
            className="btn btn-ghost btn-lg">
          <FaTrashAlt className="text-red-600"></FaTrashAlt>
           </button>
-        </th>
+        </td>
+      
+
+
     </tr>
       )
   }
