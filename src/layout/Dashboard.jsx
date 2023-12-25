@@ -47,6 +47,12 @@ const Dashboard = () => {
                 <h2 className="font-bold">Vendor List</h2>
                 </NavLink>
             </li>
+            <li>
+              <NavLink to="/dashboard/allAdmin">
+              <FaUser className="text-2xl"></FaUser>
+                <h2 className="font-bold">Admin List</h2>
+                </NavLink>
+            </li>
           
             
             
