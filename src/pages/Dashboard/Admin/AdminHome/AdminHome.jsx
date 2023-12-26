@@ -18,9 +18,9 @@ const AdminHome = () => {
   <figure><img src={user?.photoURL} alt="Shoes" /></figure>
   <div className="card-body">
    
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+      <button className="btn btn-warning">Buy Now</button>
     </div>
   </div>
 </div>

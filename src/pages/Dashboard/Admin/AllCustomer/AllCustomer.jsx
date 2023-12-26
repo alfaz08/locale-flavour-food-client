@@ -65,7 +65,7 @@ const AllCustomer = () => {
         <h2>User List: {allCustomer?.length}</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="table table-zebra">
+        <table className="table table-zebra ">
           {/* head */}
           <thead>
             <tr>

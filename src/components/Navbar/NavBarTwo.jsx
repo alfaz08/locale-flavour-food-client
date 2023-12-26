@@ -22,7 +22,7 @@ const NavBarTwo = () => {
    const navLinks =<>
          <li className="text-xl"><NavLink to="/">Home</NavLink></li>
          {
-          isVendor ?
+          isVendor || isAdmin ?
           null
           :
           <li className="text-xl"><NavLink to="/member">Become a vendor</NavLink></li>

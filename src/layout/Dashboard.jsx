@@ -6,12 +6,10 @@ import { FaDollarSign } from "react-icons/fa";
 
 
 
-
 const Dashboard = () => {
 
   const {user} =useAuth()
   console.log(user.photoURL);
-
 
  const isAdmin =true
  const isVendor =false
@@ -21,7 +19,6 @@ const Dashboard = () => {
       {/* dashboard side bar */}
       <div className="w-64 min-h-screen bg-green-200">
          <ul className="menu">
-
 
      {
       isAdmin ?
@@ -141,7 +138,6 @@ const Dashboard = () => {
 
 
 
-
            
             {/* home */}
         <div className="divider"></div>
@@ -158,7 +154,6 @@ const Dashboard = () => {
                 </NavLink>
             </li>
 
-
          </ul>
       </div>
          {/* dashboard content */}
@@ -171,3 +166,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
