@@ -3,6 +3,7 @@ import { FaAd, FaCalendar, FaHome, FaList, FaSearch, FaShoppingCart,FaUtensils, 
 import { FaBoxOpen } from "react-icons/fa6";
 import useAuth from "../hooks/useAuth";
 import { FaDollarSign } from "react-icons/fa";
+import { useState } from "react";
 
 
 
@@ -10,14 +11,15 @@ const Dashboard = () => {
 
   const {user} =useAuth()
   console.log(user.photoURL);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
  const isAdmin =true
  const isVendor =false
 
   return (
     <div className="flex">
       {/* dashboard side bar */}
-      <div className="w-64 min-h-screen bg-green-200">
+      <div className={`w-64 min-h-screen bg-green-200 sm:hidden md:block ${isMenuOpen ? 'hidden' : ''} `}>
+
          <ul className="menu">
 
      {
@@ -155,6 +157,17 @@ const Dashboard = () => {
             </li>
 
          </ul>
+      </div>
+      <div>
+      <div className="block lg:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+           
+            <span className="text-2xl">&#9776;</span>
+          </button>
+        </div>
+
+
+        
       </div>
          {/* dashboard content */}
         <div className="flex-1">
