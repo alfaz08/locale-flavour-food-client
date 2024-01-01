@@ -3,12 +3,13 @@ import Search from "../../shared/Search/Search";
 import useAuth from "../../hooks/useAuth";
 import {  toast } from "react-toastify";
 import useAdmin from "../../hooks/useAdmin";
+import useVendor from "../../hooks/useVendor";
 
 const NavBarTwo = () => {
 
    const [isAdmin] =useAdmin()
+   const [isVendor] =useVendor()
 
-   const isVendor = false
     const {user,logOut} =useAuth()
  
     const handleLogOut =()=>{

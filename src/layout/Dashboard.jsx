@@ -5,6 +5,7 @@ import useAuth from "../hooks/useAuth";
 import { FaDollarSign } from "react-icons/fa";
 import { useState } from "react";
 import useAdmin from "../hooks/useAdmin";
+import useVendor from "../hooks/useVendor";
 
 
 
@@ -12,13 +13,12 @@ const Dashboard = () => {
 
   const {user} =useAuth()
   const [isAdmin]=useAdmin()
-  console.log(isAdmin);
-  console.log(user.photoURL);
+  const [isVendor] =useVendor()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
 
 
-  const isVendor =false
+  
 
   return (
     <div className="flex">
