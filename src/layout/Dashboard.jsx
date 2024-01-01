@@ -4,16 +4,21 @@ import { FaBoxOpen } from "react-icons/fa6";
 import useAuth from "../hooks/useAuth";
 import { FaDollarSign } from "react-icons/fa";
 import { useState } from "react";
+import useAdmin from "../hooks/useAdmin";
 
 
 
 const Dashboard = () => {
 
   const {user} =useAuth()
+  const [isAdmin]=useAdmin()
+  console.log(isAdmin);
   console.log(user.photoURL);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
- const isAdmin =true
- const isVendor =false
+  
+
+
+  const isVendor =false
 
   return (
     <div className="flex">

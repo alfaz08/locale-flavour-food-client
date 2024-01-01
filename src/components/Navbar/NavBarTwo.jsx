@@ -2,13 +2,15 @@ import { Link, NavLink } from "react-router-dom";
 import Search from "../../shared/Search/Search";
 import useAuth from "../../hooks/useAuth";
 import {  toast } from "react-toastify";
+import useAdmin from "../../hooks/useAdmin";
 
 const NavBarTwo = () => {
 
-   const isAdmin = true
+   const [isAdmin] =useAdmin()
+
    const isVendor = false
     const {user,logOut} =useAuth()
-   console.log(user);
+ 
     const handleLogOut =()=>{
       logOut()
       .then(()=>
