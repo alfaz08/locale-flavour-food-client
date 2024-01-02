@@ -17,6 +17,8 @@ import VendorRevenue from "../pages/Dashboard/Vendor/VendorRevenue/VendorRevenue
 import AllCustomer from "../pages/Dashboard/Admin/AllCustomer/AllCustomer";
 import AllVendor from "../pages/Dashboard/Admin/AllVendor/AllVendor";
 import AllAdmin from "../pages/Dashboard/Admin/AllAdmin/AllAdmin";
+import AdminRoutes from "./AdminRoute";
+import AdminRoute from "./AdminRoute";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -63,15 +65,15 @@ const router = createBrowserRouter([
       },
       {
         path:'allCustomer',
-        element: <AllCustomer></AllCustomer>,
+        element: <AdminRoute><AllCustomer></AllCustomer></AdminRoute>
       },
       {
         path:'allVendor',
-        element: <AllVendor></AllVendor>
+        element: <AdminRoute><AllVendor></AllVendor></AdminRoute>
       },
       {
         path:'allAdmin',
-        element: <AllAdmin></AllAdmin>
+        element: <AdminRoute><AllAdmin></AllAdmin></AdminRoute>
       },
       
       //for verndor
