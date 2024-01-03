@@ -1,10 +1,43 @@
 import useMyProduct from "../../../../hooks/useMyProduct";
 import { FaTrashAlt } from "react-icons/fa";
 import { IoChatbubbleEllipses } from "react-icons/io5";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const VendorProduct = () => {
   const [myProduct,refetch] =useMyProduct()
   console.log(myProduct);
+
+  const axiosSecure =useAxiosSecure()
+  const handleDelete =(id)=>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result)=>{
+      if(result.isConfirmed){
+        axiosSecure.delete(`/products/${id}`)
+        .then(res=>{
+          if(res.data.deletedCount>0){
+            refetch()
+            Swal.fire({
+              title:"Deleted",
+              text:"Your post has been deleted",
+              icon:"success"
+            })
+          }
+        })
+      }
+    })
+  }
+
+
+
+
   return (
     <div>
        <div className="flex justify-evenly my-4">
@@ -57,9 +90,10 @@ const VendorProduct = () => {
       </td>
       <th>
           <button
-          
+          onClick={()=>handleDelete(product._id)}
+
            className="btn btn-ghost btn-lg">
-         <FaTrashAlt className="text-red-600"></FaTrashAlt>
+         <FaTrashAlt  className="text-red-600"></FaTrashAlt>
           </button>
         </th>
     </tr>
