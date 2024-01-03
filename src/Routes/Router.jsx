@@ -19,6 +19,7 @@ import AllVendor from "../pages/Dashboard/Admin/AllVendor/AllVendor";
 import AllAdmin from "../pages/Dashboard/Admin/AllAdmin/AllAdmin";
 import AdminRoutes from "./AdminRoute";
 import AdminRoute from "./AdminRoute";
+import Membership from "../components/VendorPayment/Membership";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: 'vendorRevenue',
         element: <VendorRevenue></VendorRevenue>
+      },
+      {
+        path: 'membership',
+        element: <Membership></Membership>
       },
       
     ]

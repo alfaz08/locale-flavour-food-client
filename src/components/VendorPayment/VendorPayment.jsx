@@ -124,7 +124,7 @@ const VendorPayment = () => {
                   <span className="label-text">Phone Number</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="number"
                   {...register("number", { required: true })}
                   placeholder="phone number"
@@ -133,8 +133,16 @@ const VendorPayment = () => {
                
               </div>
 
+              
+
+
+
+
 
               <div className="form-control w-full my-6">
+              <label className="label">
+                  <span className="label-text">Shop Image</span>
+                </label>
                 <input
                   {...register("image", { required: true })}
                   required

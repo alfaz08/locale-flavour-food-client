@@ -11,6 +11,7 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
 import useProfile from "../../../../hooks/useProfile";
 import Swal from "sweetalert2";
+import useMyProduct from "../../../../hooks/useMyProduct";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -20,6 +21,8 @@ const axiosPublic =useAxiosPublic()
 const axiosSecure = useAxiosSecure()
 const {user} =useAuth()
 const userInfo =useProfile()
+const [myProduct] =useMyProduct()
+console.log(myProduct.length);
   
 
   const {
@@ -90,7 +93,44 @@ const userInfo =useProfile()
         subHeading="What's new?"
       ></SectionTitle>
   
-<div className="hero ">
+{
+  myProduct?.length ===4 && userInfo?.membership==="normal" ?
+//   <div className=" grid justify-center mt-12">
+//   <p className="text-4xl font-bold text-center">You are not able to add more product. <br />For add unlimited product become a premium vendor membership please</p>
+//   <div className="grid justify-center mt-4">
+//   <Link to={'/dashboard/membership'}>
+//  <button className="btn btn-warning text-xl  font-bold text-center  ">Become a Member</button>
+//   </Link>
+//   </div>
+// </div>
+<div>
+<p className="md:text-4xl font-bold text-center">You are not able to add more product. <br />For add unlimited product become a premium vendor membership please</p>
+<div className="flex items-center justify-center mt-4">
+  <div className="card w-96 bg-green-200 shadow-2xl">
+    <h2 className='font-bold text-xl mt-2 text-center'>Premium Membership</h2>
+    <div className="card-body">
+      <h2 className="text-center font-bold text-4xl p-20">
+        $1000
+      </h2>
+      <div className="card-actions justify-center">
+        <Link to='/dashboard/membership'>
+          <button className='btn btn-warning hover:text-white hover:bg-black'>Buy Now</button>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+  :
+  <div className="hero ">
         <div className="hero-content flex-col ">
           
           <div className="card shadow-xl md:w-[700px]">
@@ -265,6 +305,8 @@ const userInfo =useProfile()
           
         </div>
       </div>
+
+}
            
    
 <div>
