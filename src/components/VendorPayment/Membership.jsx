@@ -1,9 +1,9 @@
-import React from 'react';
+
 
 const Membership = () => {
   return (
     <div>
-      
+       Add something
     </div>
   );
 };
