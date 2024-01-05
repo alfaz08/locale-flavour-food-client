@@ -3,7 +3,7 @@
 const VendorRevenue = () => {
   return (
     <div>
-      
+      dfssdfgg
     </div>
   );
 };
