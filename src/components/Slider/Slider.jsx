@@ -29,60 +29,43 @@ const Slider = () => {
       >
         <SwiperSlide>
           {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
-          <div className="relative">
-  <div className="image-container relative">
-    <img src="https://i.ibb.co/mC14knN/slider-2.png" alt="" className="w-full" />
-    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-left p-4 ">
-      <p className="font-bold  text-6xl hidden sm:block">Don't miss amazing Deals</p>
-      <p className="text-6xl font-bold hidden sm:block">Buy your products</p>
-    </div>
-  </div>
-</div>
+          <div className="image-container">
+          <img src="https://i.ibb.co/mC14knN/slider-2.png" alt="" />
+          <div className="text-overlay font-bold text-amber-400 hidden sm:block">Don't miss amazing Deals <span className="text-2xl text-amber-400"> <br /> Buy your products</span></div>
+        </div>
           
         </SwiperSlide>
 
         
         <SwiperSlide>
-       <div className="relative">
-  <div className="image-container relative">
-    <img src="https://i.ibb.co/FmPSDFp/slider-1.png" alt="" className="w-full" />
-    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-left p-4 ">
-      <p className="font-bold  text-6xl hidden sm:block">Fresh Fruits Big Discount</p>
-      <p className="text-6xl font-bold hidden sm:block">Save up to 50% off on your first order</p>
-    </div>
-  </div>
-</div>
+          {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
+          <div className="image-container">
+          <img src="https://i.ibb.co/FmPSDFp/slider-1.png" alt="" />
+          <div className="text-overlay font-bold text-amber-400 hidden sm:block">Explore Our Exclusive Event <br /> <button className='btn btn-warning'>Get Start</button> </div>
+        </div>
           
         </SwiperSlide>
 
 
         <SwiperSlide>
           {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
-          <div className="relative">
-  <div className="image-container relative">
-    <img src="https://i.ibb.co/mC14knN/slider-2.png" alt="" className="w-full" />
-    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-left p-4 ">
-      <p className="font-bold  text-6xl hidden sm:block">Don't miss amazing Deals</p>
-      <p className="text-6xl font-bold hidden sm:block">Buy your products</p>
-    </div>
-  </div>
-</div>
+          <div className="image-container">
+          <img src="https://i.ibb.co/mC14knN/slider-2.png" alt="" />
+          <div className="text-overlay font-bold text-amber-400 hidden sm:block">Corporate Event Solutions <span className="text-2xl text-amber-400"> <br /> Make Your Event Awesome</span></div>
+        </div>
           
         </SwiperSlide>
 
         
         <SwiperSlide>
-       <div className="relative">
-  <div className="image-container relative">
-    <img src="https://i.ibb.co/FmPSDFp/slider-1.png" alt="" className="w-full" />
-    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-left p-4 ">
-      <p className="font-bold  text-6xl hidden sm:block">Fresh Fruits Big Discount</p>
-      <p className="text-6xl font-bold hidden sm:block">Save up to 50% off on your first order</p>
-    </div>
-  </div>
-</div>
+          {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
+          <div className="image-container">
+          <img src="https://i.ibb.co/FmPSDFp/slider-1.png" alt="" />
+          <div className="text-overlay font-bold text-amber-400 hidden sm:block">Explore Our Exclusive Event <br /> <button className='btn btn-warning'>Get Start</button> </div>
+        </div>
           
         </SwiperSlide>
+
 
        
         

@@ -7,11 +7,11 @@ import Slider from "../../components/Slider/Slider";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Locale Food | Home</title>
       </Helmet>
-      <div className=" max-w-screen-2xl	 mx-auto">
+      <div className=" max-w-screen-2xl mx-auto">
       <Slider></Slider>
       </div>
       <Footer></Footer>
