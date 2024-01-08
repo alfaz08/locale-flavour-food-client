@@ -13,7 +13,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Slider = () => {
   return (
-    <Swiper
+    <div >
+      <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -31,7 +32,7 @@ const Slider = () => {
           {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
           <div className="image-container">
           <img src="https://i.ibb.co/mC14knN/slider-2.png" alt="" />
-          <div className="text-overlay font-bold text-amber-400 hidden sm:block">Don't miss amazing Deals <span className="text-2xl text-amber-400"> <br /> Buy your products</span></div>
+          {/* <div className="text-overlay font-bold text-amber-400 hidden sm:block">Don't miss amazing Deals <span className="text-2xl text-amber-400"> <br /> Buy your products</span></div> */}
         </div>
           
         </SwiperSlide>
@@ -41,7 +42,7 @@ const Slider = () => {
           {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
           <div className="image-container">
           <img src="https://i.ibb.co/FmPSDFp/slider-1.png" alt="" />
-          <div className="text-overlay font-bold text-amber-400 hidden sm:block">Explore Our Exclusive Event <br /> <button className='btn btn-warning'>Get Start</button> </div>
+          {/* <div className="text-overlay font-bold text-amber-400 hidden sm:block">Explore Our Exclusive Event <br /> <button className='btn btn-warning'>Get Start</button> </div> */}
         </div>
           
         </SwiperSlide>
@@ -70,6 +71,7 @@ const Slider = () => {
        
         
       </Swiper>
+    </div>
   );
 };
 
