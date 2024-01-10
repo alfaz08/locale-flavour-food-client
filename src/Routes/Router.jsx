@@ -20,6 +20,7 @@ import AllAdmin from "../pages/Dashboard/Admin/AllAdmin/AllAdmin";
 import AdminRoutes from "./AdminRoute";
 import AdminRoute from "./AdminRoute";
 import Membership from "../components/VendorPayment/Membership";
+import MilkProducts from "../pages/ProductsList/MilkProducts/MilkProducts";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
     {
       path:"member",
       element: <VendorPayment></VendorPayment>
+    },
+    {
+      path:"milkProducts",
+      element: <MilkProducts></MilkProducts>
     }
    ]
   },

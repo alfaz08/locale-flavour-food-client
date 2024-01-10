@@ -258,7 +258,7 @@ console.log(myProduct.length);
             <option disabled value="default" >
               Select a Food Category
             </option>
-            <option value="milk ">Milks and Dairies</option>
+            <option value="milk">Milks and Dairies</option>
             <option value="vegetable">Vegetables</option>
             <option value="fastFood">Fast Food</option>
             <option value="baking">Baking Material</option>
