@@ -21,6 +21,7 @@ import AdminRoutes from "./AdminRoute";
 import AdminRoute from "./AdminRoute";
 import Membership from "../components/VendorPayment/Membership";
 import MilkProducts from "../pages/ProductsList/MilkProducts/MilkProducts";
+import SingleProductDetails from "../pages/SIngleProductDetails/SingleProductDetails";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
     {
       path:"milkProducts",
       element: <MilkProducts></MilkProducts>
-    }
+    },
+    {
+      path:"productDetails/:id",
+      element: <SingleProductDetails></SingleProductDetails>
+    },
    ]
   },
 

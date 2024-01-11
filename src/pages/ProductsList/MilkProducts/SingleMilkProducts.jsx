@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { GrCart } from "react-icons/gr";
 import { useState } from "react";
 import { GrView } from "react-icons/gr";
@@ -8,8 +8,10 @@ const SingleMilkProducts = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [amount,setAmount] =useState(1)
   console.log(isHovered);
+  
 
   const {
+    _id,
     email,
     productCategory,
     productDetails,
@@ -127,7 +129,9 @@ const SingleMilkProducts = ({ item }) => {
                 <h2 className="font-bold mb-2">Vendor:<span className="text-green-600">{shopName}</span></h2>
                 <h2 className="font-bold mb-2">MFG: <span className="text-green-600">{productManufacturingDate}</span></h2>
 
-                <button className="btn bg-green-300 hover:text-white hover:bg-green-700">See Product Details</button>
+               <Link to={`/productDetails/${_id}`}>
+               <button className="btn bg-green-300 hover:text-white hover:bg-green-700">See Product Details</button>
+               </Link>
               </div>
             </div>
 
