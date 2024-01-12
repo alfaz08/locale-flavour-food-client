@@ -120,7 +120,12 @@ const VendorProduct = () => {
       <span>prev</span>
       {
         [...Array(myProduct.length / 5)].map((_, i)=>{
-          return <span className="border border-green-300 p-2 cursor-pointer" onClick={()=>selectPageHandler(i+1)} key={i}> {i+1}</span>
+          return <span
+          className={`border border-green-300 p-2 cursor-pointer ${page === i + 1 ? "bg-gray-300" : ""}`}
+           onClick={()=>selectPageHandler(i+1)} key={i}>
+            
+             {i+1}
+           </span>
 
         })
       }
