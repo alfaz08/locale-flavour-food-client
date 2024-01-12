@@ -10,8 +10,9 @@ const VendorProduct = () => {
   const [myProduct,refetch] =useMyProduct()
   console.log(myProduct);
   const [page,setPage] =useState(1)
-
+  //here i insert total products 5 so use 5
   const selectPageHandler =(selectPage)=>{
+    if(selectPage >=1 && selectPage<=myProduct.length/5 && selectPage !== page)
     setPage(selectPage)
   }
 
@@ -116,12 +117,15 @@ const VendorProduct = () => {
 
 
   {
-    myProduct.length >0 && <div className="pagination text-center font-bold text-xl">
-      <span>prev</span>
+    myProduct.length >0 && <div className="cursor-pointer pagination text-center font-bold text-xl">
+      <span  className={`border border-green-300 p-4  ${page >1 ? "" : " hidden"}`}
+
+       onClick={()=>selectPageHandler(page-1)}>
+        Prev</span>
       {
         [...Array(myProduct.length / 5)].map((_, i)=>{
           return <span
-          className={`border border-green-300 p-2 cursor-pointer ${page === i + 1 ? "bg-gray-300" : ""}`}
+          className={`border border-green-300 p-4  ${page === i + 1 ? "bg-gray-300" : ""}`}
            onClick={()=>selectPageHandler(i+1)} key={i}>
             
              {i+1}
@@ -130,7 +134,10 @@ const VendorProduct = () => {
         })
       }
      
-      <span>next</span>
+     
+       <span  className={`border border-green-300 p-4  ${page < myProduct.length/5 ? "" : " hidden"}`}
+       onClick={()=>selectPageHandler(page+1)}> 
+       Next </span>
     </div>
       }
 
