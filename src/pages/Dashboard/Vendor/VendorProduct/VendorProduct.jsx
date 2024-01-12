@@ -12,7 +12,7 @@ const VendorProduct = () => {
   const [page,setPage] =useState(1)
   //here i insert total products 5 so use 5
   const selectPageHandler =(selectPage)=>{
-    if(selectPage >=1 && selectPage<=myProduct.length/5 && selectPage !== page)
+    if(selectPage >=1 && selectPage<=Math.ceil(myProduct.length / 5) && selectPage !== page)
     setPage(selectPage)
   }
 
@@ -122,20 +122,19 @@ const VendorProduct = () => {
 
        onClick={()=>selectPageHandler(page-1)}>
         Prev</span>
-      {
-        [...Array(myProduct.length / 5)].map((_, i)=>{
-          return <span
-          className={`border border-green-300 p-4  ${page === i + 1 ? "bg-gray-300" : ""}`}
-           onClick={()=>selectPageHandler(i+1)} key={i}>
-            
-             {i+1}
-           </span>
-
-        })
-      }
+        {
+  [...Array(Math.ceil(myProduct.length / 5))].map((_, i) => (
+    <span
+      className={`border border-green-300 p-4  ${page === i + 1 ? "bg-gray-300" : ""}`}
+      onClick={() => selectPageHandler(i + 1)} key={i}
+    >
+      {i + 1}
+    </span>
+  ))
+}
      
      
-       <span  className={`border border-green-300 p-4  ${page < myProduct.length/5 ? "" : " hidden"}`}
+       <span  className={`border border-green-300 p-4  ${page < Math.ceil(myProduct.length / 5) ? "" : " hidden"}`}
        onClick={()=>selectPageHandler(page+1)}> 
        Next </span>
     </div>
