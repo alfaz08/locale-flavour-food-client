@@ -3,10 +3,17 @@ import { FaTrashAlt } from "react-icons/fa";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import SectionTitle from "../../../../shared/SectionTitle/SectionTitle";
+import { useState } from "react";
 
 const VendorProduct = () => {
   const [myProduct,refetch] =useMyProduct()
   console.log(myProduct);
+  const [page,setPage] =useState(1)
+
+  const selectPageHandler =(selectPage)=>{
+    setPage(selectPage)
+  }
 
   const axiosSecure =useAxiosSecure()
   const handleDelete =(id)=>{
@@ -40,10 +47,13 @@ const VendorProduct = () => {
 
   return (
     <div>
-       <div className="flex justify-evenly my-4">
-    <h2>MyProduct: {myProduct.length}</h2>
 
+       <div className="mx-auto text-center md:w-4/12 my-8">
+     
+      <h3 className="text-3xl uppercase border-green-400 border-y-4 py-4">Total Products: {myProduct.length}</h3>
     </div>
+    
+   
     <div className="overflow-x-auto">
 <table className="table table-zebra">
   {/* head */}
@@ -64,7 +74,7 @@ const VendorProduct = () => {
 
 
    {
-    myProduct.map((product,index)=>
+    myProduct.slice(page * 5 -5,page*5).map((product,index)=>
       <tr key={product._id}>
       <th>{index+1}</th>
       <td>{product.productName}</td>
@@ -103,6 +113,22 @@ const VendorProduct = () => {
   </tbody>
 </table>
 </div>
+
+
+  {
+    myProduct.length >0 && <div className="pagination text-center font-bold text-xl">
+      <span>prev</span>
+      {
+        [...Array(myProduct.length / 5)].map((_, i)=>{
+          return <span className="border border-green-300 p-2 cursor-pointer" onClick={()=>selectPageHandler(i+1)} key={i}> {i+1}</span>
+
+        })
+      }
+     
+      <span>next</span>
+    </div>
+      }
+
     </div>
   );
 };
