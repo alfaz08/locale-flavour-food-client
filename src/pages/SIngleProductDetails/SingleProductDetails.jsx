@@ -3,14 +3,16 @@ import useMilk from "../../hooks/useMilk";
 import CartToogle from "../../shared/CartToggle/CartToogle";
 import { useState } from "react";
 import { GrCart } from "react-icons/gr";
+import useSingleProductsDetails from "../../hooks/useSingleProductDetails";
 
 
 const SingleProductDetails = () => {
   const {id} =useParams()
   const [allMilk] =useMilk()
   const [amount,setAmount] =useState(1)
-  console.log(allMilk);
-  console.log(id);
+  const [singleProduct]=useSingleProductsDetails()
+  console.log(singleProduct);
+
 
    // Find the milk with the matching id
    const selectedMilk = allMilk.find(milk => milk._id === id);
