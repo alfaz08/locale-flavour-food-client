@@ -7,21 +7,20 @@ import useSingleProductsDetails from "../../hooks/useSingleProductDetails";
 
 
 const SingleProductDetails = () => {
-  const {id} =useParams()
-  const [allMilk] =useMilk()
+  // const {id} =useParams()
+  // const [allMilk] =useMilk()
   const [amount,setAmount] =useState(1)
   const [singleProduct]=useSingleProductsDetails()
-  console.log(singleProduct);
+ console.log(singleProduct);
 
+  //  // Find the milk with the matching id
+  //  const selectedMilk = allMilk.find(milk => milk._id === id);
+  //  console.log(selectedMilk);
 
-   // Find the milk with the matching id
-   const selectedMilk = allMilk.find(milk => milk._id === id);
-   console.log(selectedMilk);
-
-   // Check if a milk with the given id was found
-   if (!selectedMilk) {
-     return <div>Milk not found</div>;
-   }
+  //  // Check if a milk with the given id was found
+  //  if (!selectedMilk) {
+  //    return <div>Milk not found</div>;
+  //  }
  
    const {
     _id,
@@ -39,7 +38,7 @@ const SingleProductDetails = () => {
     shopAddress,
     shopImage,
     shopName,
-  } = selectedMilk;
+  } = singleProduct;
 
   const setDecrease =()=>{
     amount >1 ? setAmount(amount - 1) : setAmount(1)
