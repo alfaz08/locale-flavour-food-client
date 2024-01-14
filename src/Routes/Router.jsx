@@ -26,6 +26,7 @@ import VegetablesProducts from "../pages/ProductsList/Vegetables/VegetablesProdu
 import FruitsProducts from "../pages/ProductsList/Fruits/FruitsProducts";
 import SweetProducts from "../pages/ProductsList/Sweet/SweetProducts";
 import SnacksProducts from "../pages/ProductsList/Snacks/SnacksProducts";
+import BeveragesProducts from "../pages/ProductsList/Beverages/BeveragesProducts";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
     {
       path:"snackProducts",
       element: <SnacksProducts></SnacksProducts>
+    },
+    {
+      path:"beveragesProducts",
+      element: <BeveragesProducts></BeveragesProducts>
     },
     {
       path:"productDetails/:id",
