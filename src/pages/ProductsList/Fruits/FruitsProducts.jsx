@@ -10,16 +10,16 @@ const FruitsProducts = () => {
     
     <div className="max-w-screen-2xl mx-auto mt-4">
     <Helmet>
-         <title>Locale Food | Milk Products</title>
+         <title>Locale Food | Fruits Products</title>
        </Helmet>
  <div className="hero rounded-xl" style={{backgroundImage: 'url(https://i.ibb.co/6y1pQ2j/header-bg.png)'}}>
    <div className="hero-overlay bg-opacity-10">
    <div className="grid justify-start ">
    <div className=" text-lg  breadcrumbs text-black">
-       <h2 className="text-4xl font-bold p-6">Milk and Diaries</h2>
+       <h2 className="text-4xl font-bold p-6">Fruits </h2>
    <ul>
      <li><a className="text-black p-4">Home</a></li> 
-     <li><a className="text-black ">All Milk Products</a></li> 
+     <li><a className="text-black ">All Fruits Products</a></li> 
    </ul>
  </div>
    </div>
