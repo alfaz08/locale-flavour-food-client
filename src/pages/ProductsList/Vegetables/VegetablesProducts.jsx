@@ -1,11 +1,14 @@
 import { Helmet } from "react-helmet-async";
-import useVegetables from "../../../hooks/useVegetables";
-import SingleVegetableProducts from "./SingleVegetableProducts";
 
+import useVegetables from "../../../hooks/useVegetables";
+import SingleVegetablesProducts from "./SingleVegetableProducts";
 
 const VegetablesProducts = () => {
   const [allVegetables] =useVegetables()
+  
   return (
+    
+
     <div className="max-w-screen-2xl mx-auto mt-4">
     <Helmet>
          <title>Locale Food | Vegetables Products</title>
@@ -21,34 +24,34 @@ const VegetablesProducts = () => {
    </ul>
  </div>
    </div>
- 
+
    </div>
- 
+
  </div>
- 
+
  <div className="flex justify-between bg-red-300">
    <div>
    <h2 className="text-xl font-bold mt-4">We found {allVegetables.length} items for you!</h2>
- 
+
    </div>
  <div>
  <h2 className="text-xl font-bold mt-4">Search</h2>
  </div>
  </div>
- 
- 
+
+
       {/* card item */}
-      <div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
       {
-       allVegetables?.map(item=> <SingleVegetableProducts key={item._id} item={item}></SingleVegetableProducts>
+       allVegetables?.map(item=> <SingleVegetablesProducts key={item._id} item={item}></SingleVegetablesProducts>
          )
       }
       </div>
- 
- 
- 
- 
- 
+
+
+
+
+
      </div>
   );
 };

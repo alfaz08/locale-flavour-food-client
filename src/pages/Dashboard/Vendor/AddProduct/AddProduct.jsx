@@ -44,7 +44,7 @@ const AddProduct = () => {
         productImage: res.data.data.display_url,
         productionCost: data?.cost,
         productQuantity: {
-          value: parseFloat(data?.quantity*1000),
+          value: parseFloat(data?.quantity),
           unit: getCategoryUnit(selectedCategory),
         },
         profitMargin: data?.margin,

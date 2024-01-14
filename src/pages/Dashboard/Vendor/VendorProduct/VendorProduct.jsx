@@ -63,7 +63,7 @@ const VendorProduct = () => {
     <th>#</th>
       <td>Name</td>
       <td>Image</td>
-      <td>Quantity</td>
+     <td>Quantity</td>
       <td>Cost</td>
       <td>Margin</td>
       <td>Price</td>
@@ -90,9 +90,11 @@ const VendorProduct = () => {
             
           </div>
       </td>
-      <td>{product.productQuantity}</td>
+     
+
+     <td>{product.productQuantity.value} {product.productQuantity.unit}</td>
       <td>{product.productionCost}</td>
-      <td>{product.profitMarin}%</td>
+      <td>{product.profitMargin}%</td>
       <td>{product.productPrice}</td>
    
       <td>
