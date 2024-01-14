@@ -9,9 +9,8 @@ import Featured from "../../components/Featured/Featured";
 const Home = () => {
   return (
     <div className="">
-      <Helmet>
-        <title>Locale Food | Home</title>
-      </Helmet>
+      
+      
       <div className=" container mx-auto">
       <Slider></Slider>
       <Featured></Featured>

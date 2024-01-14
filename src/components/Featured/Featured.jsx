@@ -11,8 +11,8 @@ const Clients = () => {
   
   return (
     <>
-      <h2 className="text-center mt-8 font-semibold text-4xl mb-4">
-        Featured Categories
+      <h2 className="text-center mt-8 font-semibold text-4xl mb-4 text-green-00">
+        Browse All Category
       </h2>
       <Swiper
         slidesPerView={6}
@@ -114,7 +114,7 @@ const Clients = () => {
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Sweet and Desert</h2>
+                <h2 className="card-title ">Sweet and Desert</h2>
               </div>
             </div>
           </Link>
