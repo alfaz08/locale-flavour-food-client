@@ -71,7 +71,7 @@ const Clients = () => {
           </Link>
         </SwiperSlide>
          <SwiperSlide id="image">
-          <Link to="/login">
+          <Link to="/">
             <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
@@ -87,7 +87,7 @@ const Clients = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide id="image">
-          <Link to="/login">
+          <Link to="/fruitProducts">
             <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
