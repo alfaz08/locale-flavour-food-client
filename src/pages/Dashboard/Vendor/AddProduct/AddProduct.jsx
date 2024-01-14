@@ -44,7 +44,7 @@ const AddProduct = () => {
         productImage: res.data.data.display_url,
         productionCost: data?.cost,
         productQuantity: {
-          value: data?.quantity,
+          value: parseFloat(data?.quantity*1000),
           unit: getCategoryUnit(selectedCategory),
         },
         profitMargin: data?.margin,
@@ -83,6 +83,11 @@ const AddProduct = () => {
       beverage: "liter",
       fruit: "kg",
       bakery: "piece",
+      milk: "liter",
+      sweet:"kg",
+      vegetable:"kg",
+      fastFood:"piece",
+      snack:"kg"
       // Add more category mappings as needed
     };
 
