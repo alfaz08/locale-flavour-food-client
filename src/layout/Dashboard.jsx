@@ -14,7 +14,7 @@ const Dashboard = () => {
   const {user} =useAuth()
   const [isAdmin]=useAdmin()
   const [isVendor] =useVendor()
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   
 
 
@@ -30,6 +30,7 @@ const Dashboard = () => {
      {
       isAdmin ?
       <>
+       <div onClick={() => setIsMenuOpen(true)} className={`sm:hidden md:block ${isMenuOpen ? 'hidden' : ''} `}>
        <li>
               <img src={user?.photoURL} className="h-40 w-40 rounded-full ml-6" alt="" />
             </li>
@@ -66,12 +67,14 @@ const Dashboard = () => {
                 Manage Bookings
                 </NavLink>
             </li>
+       </div>
             
       </>
       :
       isVendor ?
       <>
-      <li>
+    <div onClick={() => setIsMenuOpen(true)} className={`sm:hidden md:block ${isMenuOpen ? 'hidden' : ''} `}>
+    <li>
               <img src={user?.photoURL} className="h-40 w-40 rounded-full ml-6" alt="" />
             </li>
        <li>
@@ -106,9 +109,11 @@ const Dashboard = () => {
                 <h2 className="font-bold">Total Revenue</h2>
                 </NavLink>
             </li>
+    </div>
       </>
       :
       <>
+       <div onClick={() => setIsMenuOpen(true)} className={`sm:hidden md:block ${isMenuOpen ? 'hidden' : ''} `}>
        <li>
               <NavLink to="/dashboard/userHome">
               <FaHome></FaHome>
@@ -139,6 +144,7 @@ const Dashboard = () => {
                 Bookings
                 </NavLink>
             </li>
+       </div>
       </>
      }
 
@@ -164,6 +170,8 @@ const Dashboard = () => {
          </ul>
       </div>
       <div>
+
+
       <div className="block lg:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
            
