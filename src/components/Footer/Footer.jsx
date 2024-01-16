@@ -3,14 +3,20 @@
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-green-200 text-base-content">
-  <nav>
-    <header className="footer-title">Services</header> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
-  </nav> 
+      <footer className="footer  bg-green-200 text-base-content">
+  <div>
+
+
+    <div className="flex">
+    <img className="w-36" src="https://i.ibb.co/X8zVkt2/Green-Modern-Organic-Health-Food-Logo-1-removebg-preview.png" alt="" />
+    <h2>Locale Flavour Food <br />
+    Online Grocery Shop
+    </h2>
+    
+    </div>
+
+
+  </div> 
   <nav>
     <header className="footer-title">Company</header> 
     <a className="link link-hover">About us</a>

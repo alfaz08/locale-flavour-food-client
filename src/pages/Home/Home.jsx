@@ -4,6 +4,7 @@ import NavBarTwo from "../../components/Navbar/NavBarTwo";
 import Footer from "../../components/Footer/Footer";
 import Slider from "../../components/Slider/Slider";
 import Featured from "../../components/Featured/Featured";
+import ServiceTypes from "../../components/ServiceNonFunctional/ServiceTypes";
 
 
 const Home = () => {
@@ -14,7 +15,9 @@ const Home = () => {
       <div className=" container mx-auto">
       <Slider></Slider>
       <Featured></Featured>
+      <ServiceTypes></ServiceTypes>
       </div>
+
       <Footer></Footer>
     </div>
   );
