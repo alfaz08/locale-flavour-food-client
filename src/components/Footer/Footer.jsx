@@ -22,26 +22,26 @@ const Footer = () => {
             />
             <h2 className="mt-[-28px]">Awesome grocery store website</h2>
             <h2 className="flex">
-              <IoLocationSharp className="text-xl mt-1" />
-              <span className="font-bold text-lg">
+              <IoLocationSharp className="text-md mt-1" />
+              <span className="font-bold text-mdg">
                 Address: Dhaka,Bangladesh
               </span>
             </h2>
             <h2 className="flex">
-              <MdOutlineHeadsetMic className="text-xl mt-1" />
-              <span className="font-bold text-lg">Call Us: +880171234569</span>
+              <MdOutlineHeadsetMic className="text-md mt-1" />
+              <span className="font-bold text-mdg">Call Us: +880171234569</span>
             </h2>
             <h2 className="flex">
-              <MdEmail className="text-xl mt-1" />
-              <span className="font-bold text-lg">
+              <MdEmail className="text-md mt-1" />
+              <span className="font-bold text-mdg">
                 Email:{" "}
                 <span className=" font-normal">localefood@gmail.com</span>
               </span>
             </h2>
             <h2 className="flex">
-              <MdOutlineWatchLater className="text-xl mt-1" />
+              <MdOutlineWatchLater className="text-md mt-1" />
 
-              <span className="font-bold text-lg">
+              <span className="font-bold text-mdg">
                 Hours:10:00 - 18:00, Mon - Sat
               </span>
             </h2>
@@ -50,37 +50,37 @@ const Footer = () => {
 
         <div>
           <header className="footer-title mt-4">Company</header>
-          <h2 className="mt-3 text-xl">About Us</h2>
-          <h2 className="mt-3 text-xl">Delivery Information</h2>
-          <h2 className="mt-3 text-xl">Privacy Policy</h2>
-          <h2 className="mt-3 text-xl">Terms & Conditions</h2>
-          <h2 className="mt-3 text-xl">Contact Us</h2>
-          <h2 className="mt-3 text-xl">Careers</h2>
+          <h2 className="mt-3 text-md">About Us</h2>
+          <h2 className="mt-3 text-md">Delivery Information</h2>
+          <h2 className="mt-3 text-md">Privacy Policy</h2>
+          <h2 className="mt-3 text-md">Terms & Conditions</h2>
+          <h2 className="mt-3 text-md">Contact Us</h2>
+          <h2 className="mt-3 text-md">Careers</h2>
         </div>
 
         <div>
           <header className="footer-title mt-4">Company</header>
-          <h2 className="mt-3 text-xl">About Us</h2>
-          <h2 className="mt-3 text-xl">Delivery Information</h2>
-          <h2 className="mt-3 text-xl">Privacy Policy</h2>
-          <h2 className="mt-3 text-xl">Terms & Conditions</h2>
-          <h2 className="mt-3 text-xl">Contact Us</h2>
-          <h2 className="mt-3 text-xl">Careers</h2>
+          <h2 className="mt-3 text-md">About Us</h2>
+          <h2 className="mt-3 text-md">Delivery Information</h2>
+          <h2 className="mt-3 text-md">Privacy Policy</h2>
+          <h2 className="mt-3 text-md">Terms & Conditions</h2>
+          <h2 className="mt-3 text-md">Contact Us</h2>
+          <h2 className="mt-3 text-md">Careers</h2>
         </div>
 
         <div>
           <header className="footer-title mt-4">Company</header>
-          <h2 className="mt-3 text-xl">About Us</h2>
-          <h2 className="mt-3 text-xl">Delivery Information</h2>
-          <h2 className="mt-3 text-xl">Privacy Policy</h2>
-          <h2 className="mt-3 text-xl">Terms & Conditions</h2>
-          <h2 className="mt-3 text-xl">Contact Us</h2>
-          <h2 className="mt-3 text-xl">Careers</h2>
+          <h2 className="mt-3 text-md">About Us</h2>
+          <h2 className="mt-3 text-md">Delivery Information</h2>
+          <h2 className="mt-3 text-md">Privacy Policy</h2>
+          <h2 className="mt-3 text-md">Terms & Conditions</h2>
+          <h2 className="mt-3 text-md">Contact Us</h2>
+          <h2 className="mt-3 text-md">Careers</h2>
         </div>
 
         <div>
-          <h2 className="font-bold mt-4 text-xl">Install App</h2>
-          <h2 className="mt-4 text-lg">From App Store or Google Play</h2>
+          <h2 className="font-bold mt-4 text-md">Install App</h2>
+          <h2 className="mt-4 text-mdg">From App Store or Google Play</h2>
           <div className="flex gap-2 mt-4">
             <div>
               <img
@@ -98,7 +98,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <h2 className="mt-4 text-lg">Secured Payment Gateways</h2>
+          <h2 className="mt-4 text-mdg">Secured Payment Gateways</h2>
           <img
             className="mt-4"
             src="https://i.ibb.co/RDKFmf6/payment-method.png"
@@ -109,14 +109,14 @@ const Footer = () => {
 
       <div className=" container mx-auto border-t-2   mt-4 divide-x  border-black sm:hidden md:block"></div>
 
-      <div className="container mx-auto mt-4 p-2 grid grid-cols-1 md:grid-cols-2">
+      <div className="container mx-auto mt-2 p-4 grid grid-cols-1 md:grid-cols-2">
         <div>
           <footer className="text-base-content">
             <aside>
-              <p className="text-xl  text-center">
+              <p className="text-md  text-center">
                 Copyright © 2024 - locale Flavour Food
               </p>
-              <p className="text-xl  text-center">
+              <p className="text-md  text-center">
                 All rights reserved
               </p>
             </aside>
@@ -124,8 +124,8 @@ const Footer = () => {
         </div>
 
         <div className=" ">
-          <div className="flex text-xl gap-2 justify-center">
-            <h2 className="text-lg font-bold mt-2">Follow Us</h2>
+          <div className="flex text-md gap-2 justify-center">
+            <h2 className="text-md font-bold mt-2">Follow Us</h2>
 
             <FaFacebook className=" text-4xl" />
             <AiFillInstagram className="text-4xl"/>
@@ -134,8 +134,7 @@ const Footer = () => {
             <AiFillTwitterCircle className="text-4xl"/>
           </div>
 
-        <h2 className=" text-xl text-center">Up to 15% discount on your first subscribe</h2>
-
+      
         </div>
 
 
