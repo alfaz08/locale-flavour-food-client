@@ -4,7 +4,7 @@ import useAxiosSecure from "./useAxiosSecure";
 
 
 
-const useSnack = (productCategory='snack') => {
+const useSnack = (productCategory='snacks') => {
   const axiosSecure =useAxiosSecure()
   const {user} =useAuth()
 
