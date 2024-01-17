@@ -113,10 +113,10 @@ const Footer = () => {
         <div>
           <footer className="text-base-content">
             <aside>
-              <p className="text-lg font-bold text-center">
+              <p className="text-xl  text-center">
                 Copyright © 2024 - locale Flavour Food
               </p>
-              <p className="text-lg font-bold text-center">
+              <p className="text-xl  text-center">
                 All rights reserved
               </p>
             </aside>
@@ -134,7 +134,7 @@ const Footer = () => {
             <AiFillTwitterCircle className="text-4xl"/>
           </div>
 
-        <h2 className=" font-bold text-center">Up to 15% discount on your first subscribe</h2>
+        <h2 className=" text-xl text-center">Up to 15% discount on your first subscribe</h2>
 
         </div>
 
