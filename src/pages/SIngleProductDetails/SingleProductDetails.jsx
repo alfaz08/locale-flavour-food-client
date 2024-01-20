@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import useMilk from "../../hooks/useMilk";
 import CartToogle from "../../shared/CartToggle/CartToogle";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 
 const SingleProductDetails = () => {
-  
+  const location = useLocation()
   const [amount,setAmount] =useState(1)
   const {user} =useAuth()
   const [singleProduct]=useSingleProductsDetails()

@@ -11,7 +11,7 @@ const Login = () => {
   const {signIn} =useAuth()
   const navigate =useNavigate()
   const location =useLocation()
-
+  let from = location.state?.from?.pathname || "/"
 
   const handleLogin=e=>{
     e.preventDefault();
@@ -20,7 +20,7 @@ const Login = () => {
   // console.log(email,password);
   signIn(email,password)
   .then(res=>{console.log(res.user)
-    navigate(location?.state?location.state:'/')
+    navigate(from,{replace:true})
    }) 
    .catch(error=>{
     console.log(error)
