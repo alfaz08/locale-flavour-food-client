@@ -1,27 +1,22 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useMilk from "../../hooks/useMilk";
 import CartToogle from "../../shared/CartToggle/CartToogle";
 import { useState } from "react";
 import { GrCart } from "react-icons/gr";
 import useSingleProductsDetails from "../../hooks/useSingleProductDetails";
+import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const SingleProductDetails = () => {
-  // const {id} =useParams()
-  // const [allMilk] =useMilk()
+  
   const [amount,setAmount] =useState(1)
+  const {user} =useAuth()
   const [singleProduct]=useSingleProductsDetails()
- console.log(singleProduct);
-
-  //  // Find the milk with the matching id
-  //  const selectedMilk = allMilk.find(milk => milk._id === id);
-  //  console.log(selectedMilk);
-
-  //  // Check if a milk with the given id was found
-  //  if (!selectedMilk) {
-  //    return <div>Milk not found</div>;
-  //  }
- 
+  
+  const axiosSecure =useAxiosSecure()
+   const navigate =useNavigate()
    const {
     _id,
     email,
@@ -39,6 +34,22 @@ const SingleProductDetails = () => {
     shopImage,
     shopName,
   } = singleProduct;
+  
+  // Check if productQuantity is defined and has value and unit properties
+  const productQuantityValue = productQuantity?.value;
+  const productQuantityUnit = productQuantity?.unit;
+  
+  
+
+
+
+
+
+
+
+  
+  
+  
 
   const setDecrease =()=>{
     amount >1 ? setAmount(amount - 1) : setAmount(1)
@@ -46,8 +57,65 @@ const SingleProductDetails = () => {
 
 
   const setIncrease = ()=>{
-    amount < productQuantity ? setAmount(amount + 1) : setAmount(productQuantity)
+    amount < productQuantityValue? setAmount(amount + 1) : setAmount(productQuantityValue)
   }
+  
+
+  let money = parseFloat(amount * productPrice)
+  
+
+  const handleCart=(item)=>{
+    if(user && user.email){
+      //send cart too database
+      const cartItem ={
+          productId:_id,
+          email:user.email,
+          image:productImage,
+          name:productName,
+          spendMoney:money,
+          amount:amount,
+          price:productPrice,
+          shopName: shopName
+      }
+      console.log(cartItem);
+      axiosSecure.post('/carts',cartItem)
+      .then(res=>{
+        console.log(res.data);
+        if(res.data.insertedId){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${name} added to your cart`,
+            showConfirmButton: false,
+            timer: 1200
+          });
+          //refetch the cart to update  the cart items
+          // refetch()
+        }
+      })
+  }
+  else{
+    Swal.fire({
+      title: "You are not login",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Log in!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //send the user to the login page
+        navigate('/login',{state: {from: location}})
+      }
+    });
+  }
+
+}
+
+
+
+
   return (
     <div className="max-w-screen-2xl mx-auto mt-4">
 
@@ -89,9 +157,7 @@ const SingleProductDetails = () => {
                   {productDetails}
                 </h2>
                 <h2 className="mt-4 mb-4">
-                  Size/Weight: 1 {
-                    productQuantity?.map(item=>item.unit)
-                  }
+                  Size/Weight: {productQuantityUnit}
                 </h2>
 
 
@@ -104,7 +170,9 @@ const SingleProductDetails = () => {
                     ></CartToogle>
                   </div>
                   <div>
-                  <button className="btn bg-green-300 hover:text-white hover:bg-green-700">
+                  <button
+                  onClick={()=>handleCart(singleProduct)}
+                  className="btn bg-green-300 hover:text-white hover:bg-green-700">
               <span>
                 <GrCart />
               </span>{" "}
