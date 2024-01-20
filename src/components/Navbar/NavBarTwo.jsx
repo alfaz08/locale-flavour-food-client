@@ -5,13 +5,14 @@ import { toast } from "react-toastify";
 import useAdmin from "../../hooks/useAdmin";
 import useVendor from "../../hooks/useVendor";
 import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../hooks/useCart";
 
 const NavBarTwo = () => {
   const [isAdmin] = useAdmin();
   const [isVendor] = useVendor();
 
   const { user, logOut } = useAuth();
-
+  const [cart]=useCart()
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -38,7 +39,7 @@ const NavBarTwo = () => {
           <div>
       <div className="relative">
         <FaShoppingCart className="text-4xl relative" />
-        <h2 className="rounded-full bg-green-200 text-black border-black absolute top-0 left-6 mt-[-28] badge">+0</h2>
+        <h2 className="rounded-full bg-green-200 text-black border-black absolute top-0 left-6 mt-[-28] badge">+{cart.length}</h2>
       </div>
     </div>
             

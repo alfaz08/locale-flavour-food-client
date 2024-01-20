@@ -7,6 +7,7 @@ import useSingleProductsDetails from "../../hooks/useSingleProductDetails";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useCart from "../../hooks/useCart";
 
 
 const SingleProductDetails = () => {
@@ -14,7 +15,7 @@ const SingleProductDetails = () => {
   const [amount,setAmount] =useState(1)
   const {user} =useAuth()
   const [singleProduct]=useSingleProductsDetails()
-  
+   const [,refetch]=useCart() 
   const axiosSecure =useAxiosSecure()
    const navigate =useNavigate()
    const {
@@ -34,6 +35,7 @@ const SingleProductDetails = () => {
     shopImage,
     shopName,
   } = singleProduct;
+  
   
   // Check if productQuantity is defined and has value and unit properties
   const productQuantityValue = productQuantity?.value;
@@ -90,7 +92,7 @@ const SingleProductDetails = () => {
             timer: 1200
           });
           //refetch the cart to update  the cart items
-          // refetch()
+          refetch()
         }
       })
   }
@@ -170,6 +172,8 @@ const SingleProductDetails = () => {
                     ></CartToogle>
                   </div>
                   <div>
+
+                    
                   <button
                   onClick={()=>handleCart(singleProduct)}
                   className="btn bg-green-300 hover:text-white hover:bg-green-700">
@@ -178,6 +182,9 @@ const SingleProductDetails = () => {
               </span>{" "}
               Add to Cart
             </button>
+
+
+
                   </div>
                 </div>
 
