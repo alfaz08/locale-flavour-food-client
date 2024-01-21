@@ -3,17 +3,50 @@ import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../../hooks/useCart";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import { useState } from "react";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const UserCart = () => {
   const [cart,refetch] =useCart() 
   const [page,setPage] =useState(1)
-  
+  const axiosSecure =useAxiosSecure()
+
   const totalPrice =cart.reduce((total,item)=>total+item.spendMoney,0)
-  console.log(totalPrice);
+  
 
   const selectPageHandler =(selectPage)=>{
     if(selectPage >=1 && selectPage<=Math.ceil(cart.length / 5) && selectPage !== page)
     setPage(selectPage)
+  }
+
+  const handleDelete = (id)=>{
+    
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+       
+       axiosSecure.delete(`/carts/${id}`)
+       .then(res=>{
+        if(res.data.deletedCount>0){
+          refetch()
+         Swal.fire({
+          title: "Deleted!",
+          text: "Your Cart Item has been deleted.",
+          icon: "success"
+        });
+        }
+       })
+    
+
+      }
+    });
   }
 
 
@@ -55,7 +88,7 @@ const UserCart = () => {
                 
                 <th>
                   <button
-                    
+                     onClick={()=>handleDelete(item._id)}
                     className="btn btn-ghost btn-lg"
                   >
                     <FaTrashAlt className="text-red-600"></FaTrashAlt>

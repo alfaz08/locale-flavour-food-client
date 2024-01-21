@@ -26,11 +26,19 @@ const NavBarTwo = () => {
       <li className="text-xl">
         <NavLink to="/">Home</NavLink>
       </li>
-      {isVendor || isAdmin ? null : (
-        <li className="text-xl">
-          <NavLink to="/member">Become a vendor</NavLink>
+      {
+        user ? 
+
+        <li>
+          {isVendor || isAdmin ? null : (
+          <li className="text-xl">
+            <NavLink to="/member">Become a vendor</NavLink>
+          </li>
+        )}
         </li>
-      )}
+        :
+        null
+      }
 
       {isVendor || isAdmin ? null : (
         <li className="text-xl">
