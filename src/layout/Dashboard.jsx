@@ -120,14 +120,9 @@ const Dashboard = () => {
                 User Home
                 </NavLink>
             </li>
+            
             <li>
-              <NavLink to="/dashboard/reservation">
-              <FaCalendar></FaCalendar>
-                Reservation
-                </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/cart">
+              <NavLink to="/dashboard/userCart">
               <FaShoppingCart></FaShoppingCart>
                 My Cart
                 </NavLink>
@@ -160,12 +155,7 @@ const Dashboard = () => {
                 Home
                 </NavLink>
             </li>
-        <li>
-              <NavLink to="/order/salad">
-              <FaSearch></FaSearch>
-                Menu
-                </NavLink>
-            </li>
+       
 
          </ul>
       </div>

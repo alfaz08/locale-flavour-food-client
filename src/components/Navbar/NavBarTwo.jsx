@@ -34,7 +34,7 @@ const NavBarTwo = () => {
 
       {isVendor || isAdmin ? null : (
         <li className="text-xl">
-          <NavLink to="/member">
+          <NavLink to="/dashboard/userCart">
             
           <div>
       <div className="relative">
