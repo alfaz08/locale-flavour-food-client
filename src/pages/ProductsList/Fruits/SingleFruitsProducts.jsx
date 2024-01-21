@@ -3,11 +3,19 @@ import { useState } from "react";
 import { GrView } from "react-icons/gr";
 import "./fruititem.css";
 import CartToogle from "../../../shared/CartToggle/CartToogle";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useCart from "../../../hooks/useCart";
+import Swal from "sweetalert2";
 
 const SingleFruitsProducts = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
-
+  const location =useLocation()
+const navigate = useNavigate()
+const {user} =useAuth()
+const axiosSecure =useAxiosSecure()
+const [,refetch]=useCart() 
 
   const handleAddCart=()=>{
      console.log('item');
@@ -31,7 +39,56 @@ const SingleFruitsProducts = ({ item }) => {
     shopName,
   } = item;
 
- 
+  const handleCart=(item)=>{
+    if(user && user.email){
+      //send cart too database
+      const cartItem ={
+          productId:_id,
+          email:user.email,
+          image:productImage,
+          name:productName,
+          spendMoney:productPrice,
+          amount:1,
+          price:productPrice,
+          shopName: shopName
+      }
+
+
+
+      axiosSecure.post('/carts',cartItem)
+      .then(res=>{
+        console.log(res.data);
+        if(res.data.insertedId){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${name} added to your cart`,
+            showConfirmButton: false,
+            timer: 1200
+          });
+          //refetch the cart to update  the cart items
+          refetch()
+        }
+      })
+  }
+  else{
+    Swal.fire({
+      title: "You are not login",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Log in!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //send the user to the login page
+        navigate('/login',{state: {from: location}})
+      }
+    });
+  }
+
+}
 
   return (
     <div className="">
@@ -68,8 +125,9 @@ const SingleFruitsProducts = ({ item }) => {
           <div className="flex justify-between gap-6">
             <h2 className="mt-3 font-bold">$:{productPrice}</h2>
             <button 
-            onClick={handleAddCart}
-            className="btn bg-green-300 hover:text-white hover:bg-green-700">
+             onClick={()=>handleCart(item)}
+            className="btn
+             bg-green-300 hover:text-white hover:bg-green-700">
               <span>
                 <GrCart />
               </span>{" "}

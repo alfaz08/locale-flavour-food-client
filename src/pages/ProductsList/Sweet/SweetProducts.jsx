@@ -4,6 +4,7 @@ import useSweet from "../../../hooks/useSweet";
 import SingleSweetProducts from "./SingleSweetProducts";
 import './sweetitem.css'
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const SweetProducts = () => {
   const [allSweet] =useSweet()
   console.log(allSweet);
@@ -38,7 +39,9 @@ const SweetProducts = () => {
               <h2 className="text-4xl font-bold p-6">Sweet </h2>
               <ul>
                 <li>
+                  <Link to="/">
                   <a className="text-black p-4">Home</a>
+                  </Link>
                 </li>
                 <li>
                   <a className="text-black ">All Sweet Products</a>
