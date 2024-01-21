@@ -105,7 +105,8 @@ const CheckoutForm = () => {
       const res = await axiosSecure.post('/customerPayments',payment)
       console.log('payment done',res.data);
       refetch()
-      navigate('/')
+
+      navigate('/dashboard/userPaymentHistory')
     }
    
    

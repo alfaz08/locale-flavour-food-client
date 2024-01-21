@@ -29,6 +29,7 @@ import SnacksProducts from "../pages/ProductsList/Snacks/SnacksProducts";
 import BeveragesProducts from "../pages/ProductsList/Beverages/BeveragesProducts";
 import UserCart from "../pages/Dashboard/User/UserCart/UserCart";
 import Payment from "../pages/Dashboard/User/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/User/Payment/PaymentHistory";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path:'userPayment',
         element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+      },
+      {
+        path:'userPaymentHistory',
+        element: <PrivateRoute> <PaymentHistory></PaymentHistory> </PrivateRoute>,
       },
      
 
