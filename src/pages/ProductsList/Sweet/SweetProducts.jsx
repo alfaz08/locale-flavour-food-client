@@ -24,7 +24,7 @@ const SweetProducts = () => {
 
     <div className="max-w-screen-2xl mx-auto mt-4">
      <Helmet>
-        <title>Locale Food | Fruits Products</title>
+        <title>Locale Food | Sweet Products</title>
       </Helmet>
       <div
         className="hero rounded-xl"
@@ -35,13 +35,13 @@ const SweetProducts = () => {
         <div className="hero-overlay bg-opacity-10">
           <div className="grid justify-start ">
             <div className=" text-lg  breadcrumbs text-black">
-              <h2 className="text-4xl font-bold p-6">Fruits </h2>
+              <h2 className="text-4xl font-bold p-6">Sweet </h2>
               <ul>
                 <li>
                   <a className="text-black p-4">Home</a>
                 </li>
                 <li>
-                  <a className="text-black ">All Fruits Products</a>
+                  <a className="text-black ">All Sweet Products</a>
                 </li>
               </ul>
             </div>

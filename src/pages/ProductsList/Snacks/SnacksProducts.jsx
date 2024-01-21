@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import useSnack from "../../../hooks/useSnack";
 import SingleSnackProducts from "./SingleSnackProducts";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SnacksProducts = () => {
   const [allSnack] =useSnack()
@@ -36,13 +37,15 @@ const SnacksProducts = () => {
         <div className="hero-overlay bg-opacity-10">
           <div className="grid justify-start ">
             <div className=" text-lg  breadcrumbs text-black">
-              <h2 className="text-4xl font-bold p-6">Fruits </h2>
+              <h2 className="text-4xl font-bold p-6">Snack </h2>
               <ul>
                 <li>
-                  <a className="text-black p-4">Home</a>
+                 <Link to="/">
+                 <a className="text-black p-4">Home</a>
+                 </Link>
                 </li>
                 <li>
-                  <a className="text-black ">All Fruits Products</a>
+                  <a className="text-black ">All Snacks Products</a>
                 </li>
               </ul>
             </div>

@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import useMilk from "../../../hooks/useMilk";
 import SingleMilkProducts from "./SingleMilkProducts";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MilkProducts = () => {
   const [allMilk] =useMilk()
@@ -35,13 +36,15 @@ const MilkProducts = () => {
         <div className="hero-overlay bg-opacity-10">
           <div className="grid justify-start ">
             <div className=" text-lg  breadcrumbs text-black">
-              <h2 className="text-4xl font-bold p-6">Fruits </h2>
+              <h2 className="text-4xl font-bold p-6">Milk </h2>
               <ul>
                 <li>
-                  <a className="text-black p-4">Home</a>
+                <Link to="/">
+                <a className="text-black p-4">Home</a>
+                </Link>
                 </li>
                 <li>
-                  <a className="text-black ">All Fruits Products</a>
+                  <a className="text-black ">All Milk Products</a>
                 </li>
               </ul>
             </div>

@@ -4,9 +4,14 @@ import { GrView } from "react-icons/gr";
 import "./fruititem.css";
 import CartToogle from "../../../shared/CartToggle/CartToogle";
 import { Link } from "react-router-dom";
+
 const SingleFruitsProducts = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+
+  const handleAddCart=()=>{
+     console.log('item');
+  }
 
   const {
     _id,
@@ -62,7 +67,9 @@ const SingleFruitsProducts = ({ item }) => {
 
           <div className="flex justify-between gap-6">
             <h2 className="mt-3 font-bold">$:{productPrice}</h2>
-            <button className="btn bg-green-300 hover:text-white hover:bg-green-700">
+            <button 
+            onClick={handleAddCart}
+            className="btn bg-green-300 hover:text-white hover:bg-green-700">
               <span>
                 <GrCart />
               </span>{" "}
