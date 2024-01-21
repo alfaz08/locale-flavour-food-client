@@ -28,6 +28,7 @@ import SweetProducts from "../pages/ProductsList/Sweet/SweetProducts";
 import SnacksProducts from "../pages/ProductsList/Snacks/SnacksProducts";
 import BeveragesProducts from "../pages/ProductsList/Beverages/BeveragesProducts";
 import UserCart from "../pages/Dashboard/User/UserCart/UserCart";
+import Payment from "../pages/Dashboard/User/Payment/Payment";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
         path:'userCart',
         element: <PrivateRoute><UserCart></UserCart></PrivateRoute>,
       },
+      {
+        path:'userPayment',
+        element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+      },
      
 
 
@@ -140,7 +145,7 @@ const router = createBrowserRouter([
         element: <VendorRevenue></VendorRevenue>
       },
       {
-        path: 'membership',
+        path: 'payment',
         element: <Membership></Membership>
       },
       

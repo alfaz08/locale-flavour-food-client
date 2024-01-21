@@ -20,7 +20,7 @@ const AddProduct = () => {
   const { user } = useAuth();
   const userInfo = useProfile();
   const [myProduct] = useMyProduct();
-
+  console.log(myProduct.length);
   const {
     register,
     handleSubmit,
@@ -103,7 +103,7 @@ const AddProduct = () => {
         <SectionTitle heading="add an item" subHeading="What's new?" />
       </div>
 
-      {myProduct?.length === 4 && userInfo?.membership === "normal" ? (
+      {myProduct?.length === 5 && userInfo?.membership === "normal" ? (
         <div>
           <p className="md:text-4xl font-bold text-center">
             You are not able to add more products. <br />
@@ -117,7 +117,7 @@ const AddProduct = () => {
               <div className="card-body">
                 <h2 className="text-center font-bold text-4xl p-20">$1000</h2>
                 <div className="card-actions justify-center">
-                  <Link to="/dashboard/membership">
+                  <Link to="/dashboard/payment">
                     <button className="btn btn-warning hover:text-white hover:bg-black">
                       Buy Now
                     </button>

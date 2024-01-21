@@ -6,6 +6,7 @@ import { FaDollarSign } from "react-icons/fa";
 import { useState } from "react";
 import useAdmin from "../hooks/useAdmin";
 import useVendor from "../hooks/useVendor";
+import useCart from "../hooks/useCart";
 
 
 
@@ -15,7 +16,7 @@ const Dashboard = () => {
   const [isAdmin]=useAdmin()
   const [isVendor] =useVendor()
   const [isMenuOpen, setIsMenuOpen] = useState(true);
-  
+  const [cart]=useCart()
 
 
   
@@ -124,7 +125,7 @@ const Dashboard = () => {
             <li>
               <NavLink to="/dashboard/userCart">
               <FaShoppingCart></FaShoppingCart>
-                My Cart
+                My Cart ({cart.length})
                 </NavLink>
             </li>
             <li>

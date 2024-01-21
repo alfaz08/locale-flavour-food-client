@@ -5,6 +5,7 @@ import { MdShoppingCartCheckout } from "react-icons/md";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const UserCart = () => {
   const [cart,refetch] =useCart() 
@@ -151,9 +152,13 @@ const UserCart = () => {
       <h2 className="text-xl">$ {totalPrice}</h2>
     </div>
     <div>
-      <button className="btn mt-4 font-bold bg-green-300 hover:text-white hover:bg-green-700">
+      <Link to="/dashboard/userPayment">
+      <button
+      
+       className="btn mt-4 font-bold bg-green-300 hover:text-white hover:bg-green-700">
         Proceed To Checkout <MdShoppingCartCheckout className="text-bold" />
       </button>
+      </Link>
     </div>
   </div>
 </div>
