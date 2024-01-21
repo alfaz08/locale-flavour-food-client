@@ -7,12 +7,13 @@ import { useState } from "react";
 const UserCart = () => {
   const [cart,refetch] =useCart() 
   const [page,setPage] =useState(1)
-   console.log('initial page' ,page);
+  
+  const totalPrice =cart.reduce((total,item)=>total+item.spendMoney,0)
+  console.log(totalPrice);
+
   const selectPageHandler =(selectPage)=>{
-    console.log('select page',selectPage);
     if(selectPage >=1 && selectPage<=Math.ceil(cart.length / 5) && selectPage !== page)
     setPage(selectPage)
-  console.log('page',page);
   }
 
 
@@ -114,7 +115,7 @@ const UserCart = () => {
     </div>
     <div className="flex justify-between mt-4">
       <h2 className="text-xl font-bold">Total:</h2>
-      <h2>Taka</h2>
+      <h2 className="text-xl">$ {totalPrice}</h2>
     </div>
     <div>
       <button className="btn mt-4 font-bold bg-green-300 hover:text-white hover:bg-green-700">
