@@ -46,21 +46,7 @@ const PaymentHistory = () => {
                 <h2 className='bg-green-300 p-4 text-center rounded-lg'>complete</h2>
                 }</td>
 
-                <td>
-                  <button 
-                 
-                  className="btn bg-green-400">
-                    <FaUserShield />
-                  </button>
-                </td>
-                <th>
-                  <button
-                   
-                    className="btn btn-ghost btn-lg"
-                  >
-                    <FaTrashAlt className="text-red-600"></FaTrashAlt>
-                  </button>
-                </th>
+                
               </tr>
             ))}
           </tbody>

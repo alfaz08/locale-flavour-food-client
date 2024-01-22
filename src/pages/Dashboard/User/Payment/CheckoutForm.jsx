@@ -104,7 +104,26 @@ const CheckoutForm = () => {
       console.log(payment);
       const res = await axiosSecure.post('/customerPayments',payment)
       console.log('payment done',res.data);
+      
+
+      const orders ={
+        email: user?.email,
+        date: new Date(),
+        productIds: cart.map(item=>item.productId),
+        name: normalizedUserInfo?.name,
+        status:"pending"
+      }
+      await axiosSecure.post('/orders',orders)
+
       refetch()
+
+      // {
+      //   cart?.map((item)=><div key={item._id}>
+      //       {item.productId}
+      //   </div>
+      //   )
+      // }
+
 
       navigate('/dashboard/userPaymentHistory')
     }
