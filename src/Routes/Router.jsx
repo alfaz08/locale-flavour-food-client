@@ -87,24 +87,24 @@ const router = createBrowserRouter([
 
   {
     path: 'dashboard',
-    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    element: <Dashboard></Dashboard>,
     children:[
       //for all users
       {
         path:'userHome',
-        element: <PrivateRoute><UserHome></UserHome></PrivateRoute>,
+        element: <UserHome></UserHome>,
       },
       {
         path:'userCart',
-        element: <PrivateRoute><UserCart></UserCart></PrivateRoute>,
+        element: <UserCart></UserCart>,
       },
       {
         path:'userPayment',
-        element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+        element: <Payment></Payment>,
       },
       {
         path:'userPaymentHistory',
-        element: <PrivateRoute> <PaymentHistory></PaymentHistory> </PrivateRoute>,
+        element:  <PaymentHistory></PaymentHistory>,
       },
      
 

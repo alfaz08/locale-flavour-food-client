@@ -41,7 +41,7 @@ const SignUp = () => {
       const loggedUser = result.user;
 
       await updateUserProfile(data.name, res.data.data.display_url);
-       console.log('updated');
+       
       const userInfo ={
         email: data.email,
         name:data.name,
