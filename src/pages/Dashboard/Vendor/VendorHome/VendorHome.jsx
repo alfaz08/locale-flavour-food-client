@@ -14,13 +14,11 @@ const VendorHome = () => {
     <div className='grid grid-cols-1 md:grid-cols-4'>
       <div className='col-span-2'>
       <div className="card card-compact bg-base-100 shadow-xl justify-center items-center mt-20">
-  <figure><img src={userInfo?.image} alt="Shoes" /></figure>
+  <figure><img className='w-96 h-96' src={userInfo?.image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="text-2xl font-bold text-center">{userInfo?.shop}</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
+   
+    
   </div>
 </div>
       </div>

@@ -26,6 +26,9 @@ const NavBarTwo = () => {
       <li className="text-xl">
         <NavLink to="/">Home</NavLink>
       </li>
+      <li className="text-xl">
+        <NavLink to="/shopList">Shop</NavLink>
+      </li>
       {
         user ? 
 

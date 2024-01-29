@@ -30,6 +30,7 @@ import BeveragesProducts from "../pages/ProductsList/Beverages/BeveragesProducts
 import UserCart from "../pages/Dashboard/User/UserCart/UserCart";
 import Payment from "../pages/Dashboard/User/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/User/Payment/PaymentHistory";
+import ShopList from "../pages/ShopList/ShopList";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
     {
       path:"sweetProducts",
       element: <SweetProducts></SweetProducts>
+    },
+    {
+      path:"shopList",
+      element: <ShopList></ShopList>
     },
     {
       path:"snackProducts",

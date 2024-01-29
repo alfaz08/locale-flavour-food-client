@@ -28,7 +28,20 @@ console.log('orderItems', orderItems);
 
   return (
     <div>
-      
+      <div>
+        {
+          orderItems.map(orderItem=> 
+            <div key={orderItem._id}> 
+            {orderItem._id}
+        {orderItem.name}
+      {orderItem.date}
+            </div>
+            
+            
+            )
+        
+        }
+      </div>
     </div>
   );
 };
