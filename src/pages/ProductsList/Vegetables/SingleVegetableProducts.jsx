@@ -62,6 +62,7 @@ const SingleVegetablesProducts = ({ item }) => {
             timer: 1200
           });
           //refetch the cart to update  the cart items
+          axiosSecure.patch(`/products/${_id}`)
           refetch()
         }
       })

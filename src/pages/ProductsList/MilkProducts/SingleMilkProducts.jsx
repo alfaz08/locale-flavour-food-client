@@ -63,6 +63,7 @@ const  SingleMilkProducts  = ({ item }) => {
             showConfirmButton: false,
             timer: 1200
           });
+          axiosSecure.patch(`/products/${_id}`)
           //refetch the cart to update  the cart items
           refetch()
         }
