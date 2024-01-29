@@ -14,7 +14,9 @@ const VendorOrder = () => {
   return (
     <div>
       {
-         orders.map(item=> <Single key={item.id} item={item}></Single>)
+         orders.map(item=>
+          
+           <Single key={item.id} item={item}></Single>)
       }
     </div>
   );
