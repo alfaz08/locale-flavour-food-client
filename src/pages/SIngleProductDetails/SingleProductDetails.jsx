@@ -92,7 +92,12 @@ const SingleProductDetails = () => {
             timer: 1200
           });
           //refetch the cart to update  the cart items
-          refetch()
+           refetch()
+        
+           axiosSecure.patch(`/products/${_id}`)
+
+
+
         }
       })
   }
