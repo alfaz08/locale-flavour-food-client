@@ -13,7 +13,7 @@ const Clients = () => {
   
   return (
     <>
-     <div className="flex justify-between bg-red-400">
+     <div className="flex justify-between ">
      <div>
      <h2 className="text-center mt-8 font-semibold text-4xl mb-4 text-green-00">
         Browse All Category
@@ -21,12 +21,12 @@ const Clients = () => {
      </div>
 
       <div>
-      <div className="flex mt-10 gap-2">
+      <div className="flex mt-10 gap-">
       <div>
-      <FaArrowCircleRight  className="text-4xl"/>
+      <FaArrowCircleLeft  className="text-4xl"/>
       </div>
       <div>
-      <FaArrowCircleLeft className="text-4xl"/>
+      <FaArrowCircleRight className="text-4xl"/>
       </div>
       </div>
       </div>
@@ -60,7 +60,7 @@ const Clients = () => {
         
          <SwiperSlide id="image">
           <Link to="/milkProducts">
-            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-52 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/yPrK83G/dairy-foods-994e5cf540.png"
@@ -76,7 +76,7 @@ const Clients = () => {
         </SwiperSlide>
          <SwiperSlide id="image">
           <Link to="vegetableProducts">
-            <div className="card h-60 w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card h-60 w-52 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/f4YGj6G/993599f89f1adc596544cd6e110328e1.jpg"
@@ -92,7 +92,7 @@ const Clients = () => {
         </SwiperSlide>
          <SwiperSlide id="image">
           <Link to="/beveragesProducts">
-            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-52 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"
@@ -108,7 +108,7 @@ const Clients = () => {
         </SwiperSlide>
         <SwiperSlide id="image">
           <Link to="/fruitProducts">
-            <div className="card h-60 w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card h-60 w-52 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/BqTfxC1/173142137-fruit-set-natural-tropical-fruit-fresh-organic-food-for-menu-banner-farm-product-design-ma.jpg"
@@ -125,7 +125,7 @@ const Clients = () => {
 
         <SwiperSlide id="image">
           <Link to="/sweetProducts">
-            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-52 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/X5MKTnj/800px-COLOURBOX5822678.jpg"
@@ -142,7 +142,7 @@ const Clients = () => {
 
         <SwiperSlide id="image">
           <Link to="/snackProducts">
-            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-52 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"
@@ -158,7 +158,7 @@ const Clients = () => {
         </SwiperSlide>
         <SwiperSlide id="image">
           <Link to="/login">
-            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-52 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"

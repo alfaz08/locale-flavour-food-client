@@ -4,6 +4,13 @@ import useAllProduct from "../../hooks/useAllProduct";
 
 import SingleMilkProducts from "../../pages/ProductsList/MilkProducts/SingleMilkProducts";
 import useCategory from "../../hooks/useCategory";
+import useVegetables from "../../hooks/useVegetables";
+import useFruits from "../../hooks/UseFruits";
+import useMilk from "../../hooks/useMilk";
+import useBeverages from "../../hooks/useBeverages";
+import useSweet from "../../hooks/useSweet";
+import useSnack from "../../hooks/useSnack";
+import SingleProducts from "./SingleProducts";
 
 
 
@@ -13,23 +20,55 @@ const PopularProduct = () => {
   
 
   const [allProducts] = useAllProduct() 
- 
+  const [allCategory] = useCategory()
+  const [allVegetables] =useVegetables()
+  const [allFruits] = useFruits();
+  const [allMilk] =useMilk()
+  const [allBeverages] =useBeverages()
+  const [allSweet] =useSweet()
+  const [allSnack] =useSnack()
+  
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
 
   const [sortProduct, setSortProduct] = useState([]);
+  
 
 
   const sortedAllProducts = allProducts.sort((a, b) => b.popularity - a.popularity);
   
   
   const handleSort = (event) => {
-    const selectedValue = event.target.value;
-    console.log("Selected value:", selectedValue);
-    const sortedData = sortedAllProducts.slice().sort((a, b) => {
-      return selectedValue === "asc"
-        ? a.productPrice - b.productPrice
-        : b.productPrice - a.productPrice;
-    });
-    setSortProduct(sortedData);
+   
+
+    if(event==='vegetables'){
+      const sortedVegetables = allVegetables.sort((a, b) => b.popularity - a.popularity);
+      setSortProduct(sortedVegetables)
+      setSelectedCategory('vegetables')
+    } else if(event==='fruit'){
+      const sortedFruits = allFruits.sort((a, b) => b.popularity - a.popularity);
+      setSortProduct(sortedFruits)
+      setSelectedCategory('fruit')
+    }else if(event==='milk'){
+      const sortedMilk = allMilk.sort((a, b) => b.popularity - a.popularity);
+      setSortProduct(sortedMilk)
+      setSelectedCategory('milk')
+    }else if(event==='beverage'){
+      const sortedBeverage = allBeverages.sort((a, b) => b.popularity - a.popularity);
+      setSortProduct(sortedBeverage)
+      setSelectedCategory('beverage')
+    }else if(event==='sweet'){
+      const sortedSweet = allSweet.sort((a, b) => b.popularity - a.popularity);
+      setSortProduct(sortedSweet)
+      setSelectedCategory('sweet')
+    }else if(event==='snack'){
+      const sortedSnack = allSnack.sort((a, b) => b.popularity - a.popularity);
+      setSortProduct(sortedSnack)
+      setSelectedCategory('snack')
+    }else{
+      setSortProduct(sortedAllProducts)
+      setSelectedCategory('All')
+    }
   };
  
  
@@ -42,46 +81,44 @@ const PopularProduct = () => {
     <div>
      
 
-     <div className="flex justify-between">
+     <div className="grid  md:flex justify-between ">
      <div>
      <h2 className=" mt-8 font-semibold text-4xl mb-4 text-green-00">Popular Products</h2>
      </div>
-     <div className="flex gap-6 mt-10 ">
-     <div className="flex mr-4 ">
-            <select
-              className="cursor-pointer rounded-md border px-4 py-2 text-center text-gray-600"
-              name="sortBy"
-              id="sortBy"
-              onChange={handleSort}
-            >
-              <option value="">
-                {" "}
-
-                Sort
-              </option>
-              <option value="asc">Price: Low to High</option>
-              <option value="desc">Price: High to Low</option>
-            </select>
-          </div>
+     <div className="grid grid-cols-2 md:flex gap-6 mt-10 ">
+     
+  <button onClick={() => handleSort("All")}
+  className={selectedCategory === "All" ? "text-red-400" : ""}
+  >All</button>
+  
+  {allCategory?.map(item => (
+    <button
+      onClick={() => handleSort(item.category)}
+      className={selectedCategory === item.category ? "text-red-400" : ""}
+      key={item.id}
+    >
+      <h2 className="text-xl">{item.category}</h2>
+    </button>
+  ))}
      </div>
      </div>
     
        
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+      <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
 
       {sortProduct.length > 0
-          ? sortProduct?.slice(0,12).map((item) => (
-            <SingleMilkProducts
+          ? sortProduct?.slice(0,10).map((item) => (
+            <SingleProducts
               key={item._id}
               item={item}
-            ></SingleMilkProducts>
+            ></SingleProducts>
           ))
-          : sortedAllProducts?.slice(0,12).map((item) => (
-            <SingleMilkProducts
+          : sortedAllProducts?.slice(0,10).map((item) => (
+            <SingleProducts
               key={item._id}
               item={item}
-            ></SingleMilkProducts>
+            ></SingleProducts>
           ))}
       {
       }
