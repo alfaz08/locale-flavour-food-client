@@ -5,15 +5,33 @@ import "swiper/css/pagination";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import useCategory from "../../hooks/useCategory";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 const Clients = () => {
   const [allCategory] =useCategory()
   
   return (
     <>
-      <h2 className="text-center mt-8 font-semibold text-4xl mb-4 text-green-00">
+     <div className="flex justify-between bg-red-400">
+     <div>
+     <h2 className="text-center mt-8 font-semibold text-4xl mb-4 text-green-00">
         Browse All Category
       </h2>
+     </div>
+
+      <div>
+      <div className="flex mt-10 gap-2">
+      <div>
+      <FaArrowCircleRight  className="text-4xl"/>
+      </div>
+      <div>
+      <FaArrowCircleLeft className="text-4xl"/>
+      </div>
+      </div>
+      </div>
+
+     </div>
       <Swiper
         slidesPerView={6}
         spaceBetween={10}
@@ -38,9 +56,11 @@ const Clients = () => {
         }}
         className="mySwiper"
       >
+
+        
          <SwiperSlide id="image">
           <Link to="/milkProducts">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/yPrK83G/dairy-foods-994e5cf540.png"
@@ -56,7 +76,7 @@ const Clients = () => {
         </SwiperSlide>
          <SwiperSlide id="image">
           <Link to="vegetableProducts">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card h-60 w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/f4YGj6G/993599f89f1adc596544cd6e110328e1.jpg"
@@ -72,7 +92,7 @@ const Clients = () => {
         </SwiperSlide>
          <SwiperSlide id="image">
           <Link to="/beveragesProducts">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"
@@ -88,7 +108,7 @@ const Clients = () => {
         </SwiperSlide>
         <SwiperSlide id="image">
           <Link to="/fruitProducts">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card h-60 w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/BqTfxC1/173142137-fruit-set-natural-tropical-fruit-fresh-organic-food-for-menu-banner-farm-product-design-ma.jpg"
@@ -105,7 +125,7 @@ const Clients = () => {
 
         <SwiperSlide id="image">
           <Link to="/sweetProducts">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/X5MKTnj/800px-COLOURBOX5822678.jpg"
@@ -114,7 +134,7 @@ const Clients = () => {
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title ">Sweet and Desert</h2>
+                <h2 className="card-title ">Sweet and Dessert</h2>
               </div>
             </div>
           </Link>
@@ -122,7 +142,7 @@ const Clients = () => {
 
         <SwiperSlide id="image">
           <Link to="/snackProducts">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"
@@ -138,7 +158,7 @@ const Clients = () => {
         </SwiperSlide>
         <SwiperSlide id="image">
           <Link to="/login">
-            <div className="card w-56 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
+            <div className="card w-56 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"
@@ -160,3 +180,5 @@ const Clients = () => {
 };
 
 export default Clients;
+
+

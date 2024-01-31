@@ -3,7 +3,7 @@
 
 const ServiceTypes = () => {
   return (
-    <div className="grid  md:flex md:gap-4 justify-around">
+    <div className="grid  mt-4 md:flex md:gap-4 justify-around">
 
 <div className="card w-72 h-32 bg-gray-100  mb-4">
   <div className="flex gap-2 justify-center items-center mt-10 ">

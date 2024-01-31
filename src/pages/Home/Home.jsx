@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import Slider from "../../components/Slider/Slider";
 import Featured from "../../components/Featured/Featured";
 import ServiceTypes from "../../components/ServiceNonFunctional/ServiceTypes";
+import PopularProduct from "../../components/PopularProduct/PopularProduct";
 
 
 const Home = () => {
@@ -15,6 +16,8 @@ const Home = () => {
       <div className=" container mx-auto">
       <Slider></Slider>
       <Featured></Featured>
+      
+      <PopularProduct></PopularProduct>
       <ServiceTypes></ServiceTypes>
       </div>
 
