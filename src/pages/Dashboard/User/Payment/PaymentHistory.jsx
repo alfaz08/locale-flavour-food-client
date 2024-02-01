@@ -5,6 +5,7 @@ import { FaUserShield } from 'react-icons/fa6';
 
 const PaymentHistory = () => {
   const [myPayments] =usePaymentHistory()
+  console.log(myPayments);
   
   return (
     <div>

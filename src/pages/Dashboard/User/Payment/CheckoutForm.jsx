@@ -25,7 +25,10 @@ const CheckoutForm = () => {
  const totalPrice =cart.reduce((total,item)=>total+item.spendMoney,0)
  
   const navigate = useNavigate()
-
+  const [deliveryAddress, setDeliveryAddress] = useState('');
+  
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [userName, setUserName] = useState('');
 
  useEffect(()=>{
     axiosSecure.post('/customer-payment',{price: totalPrice})
@@ -99,7 +102,10 @@ const CheckoutForm = () => {
         productIds: cart.map(item=>item.productId),
         name: normalizedUserInfo?.name,
         transactionId: paymentIntent.id,
-        status:"pending"
+        status:"pending",
+        orderName: userName || 'anonymous',
+       phoneNumber: phoneNumber,
+         address: deliveryAddress,
       }
       console.log(payment);
       const res = await axiosSecure.post('/customerPayments',payment)
@@ -142,6 +148,41 @@ const CheckoutForm = () => {
 
   return (
    <form onSubmit={handleSubmit}>
+  
+  <div>
+        <label htmlFor="userName">Name:</label>
+        <input
+          type="text"
+          id="userName"
+          value={userName}
+          className="border border-green-300 h-12 mt-4"
+          onChange={(e) => setUserName(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="phoneNumber">Phone Number:</label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          value={phoneNumber}
+          className="border border-green-300 h-12 mt-4"
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          required
+        />
+      </div>
+  <div>
+        <label htmlFor="deliveryAddress ">Delivery Address:</label>
+        <input
+          type="text"
+          id="deliveryAddress"
+          value={deliveryAddress}
+          className="border border-green-300 h-12 mt-4 mb-4"
+          onChange={(e) => setDeliveryAddress(e.target.value)}
+          required
+        />
+      </div>
+
     <CardElement
         options={{
           style: {
@@ -161,6 +202,7 @@ const CheckoutForm = () => {
       <button className="btn btn-warning" type="submit" disabled={!stripe || !clientSecret}>
         Pay
       </button>
+      
       <p className="text-red-600">{error}</p>
    </form>
   );
