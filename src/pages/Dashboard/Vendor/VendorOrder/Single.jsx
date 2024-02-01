@@ -36,26 +36,31 @@ const Single = ({ item }) => {
 
   return (
     <div>
-      {myOrderItems.length > 0 ? (
-        <div className="mt-4 flex gap-4">
-          <h2>{totalPrice} Taka</h2>
-          <h2>{myOrderItems.length} Items</h2>
-          <h2>Pending</h2>
-
-          {/* {
-         orderItems.map(orderItem=> 
-           <div key={orderItem._id}> 
-           {orderItem._id}
-       {orderItem.name}
-     {orderItem.date}
-           </div>
-           
-           
-           )
-       
-       } */}
+      {myOrderItems.length > 0 && (
+        <div className="mt-4">
+          <table className="border-collapse w-full">
+            <thead>
+              <tr>
+                <th className="border border-gray-400 bg-gray-200 px-4 py-2">Order By</th>
+                <th className="border border-gray-400 bg-gray-200 px-4 py-2">Email</th>
+                <th className="border border-gray-400 bg-gray-200 px-4 py-2">Total Price</th>
+                <th className="border border-gray-400 bg-gray-200 px-4 py-2">Number of Items</th>
+                <th className="border border-gray-400 bg-gray-200 px-4 py-2">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-400  px-4 py-2">{name}</td>
+                <td className="border border-gray-400 px-4 py-2">{email}</td>
+                <td className="border border-gray-400 px-4 py-2">{totalPrice} Taka</td>
+                <td className="border border-gray-400 px-4 py-2">{myOrderItems.length} Items</td>
+                <td className="border border-gray-400 px-4 py-2">Pending</td>
+              </tr>
+              {/* Add additional rows for each item in myOrderItems if needed */}
+            </tbody>
+          </table>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

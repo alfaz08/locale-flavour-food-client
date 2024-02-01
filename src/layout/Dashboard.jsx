@@ -17,7 +17,8 @@ const Dashboard = () => {
   const [isVendor] =useVendor()
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [cart]=useCart()
-
+ 
+  console.log(isAdmin);
 
   
 
