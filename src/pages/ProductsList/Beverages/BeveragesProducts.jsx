@@ -86,7 +86,7 @@ const BeveragesProducts = () => {
 
 
       {/* card item */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+      <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
       {sortProduct.length > 0
           ? sortProduct?.map((item) => (
               <SingleBeveragesProduct

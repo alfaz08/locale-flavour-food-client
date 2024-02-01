@@ -31,6 +31,7 @@ import UserCart from "../pages/Dashboard/User/UserCart/UserCart";
 import Payment from "../pages/Dashboard/User/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/User/Payment/PaymentHistory";
 import ShopList from "../pages/ShopList/ShopList";
+import SingleShopDetails from "../pages/SingleShopDetails/SingleShopDetails";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -86,6 +87,11 @@ const router = createBrowserRouter([
     {
       path:"productDetails/:id",
       element: <SingleProductDetails></SingleProductDetails>
+    },
+    
+    {
+      path:"shopDetails/:id",
+      element: <SingleShopDetails></SingleShopDetails>
     },
    ]
   },
