@@ -82,7 +82,7 @@ const CheckoutForm = () => {
       Swal.fire({
         position:"top-end",
         icon:"success",
-        title:`Payment is successful and Now you are Gold Member`,
+        title:`Payment is successful`,
         showConfirmButton:false,
         timer:1500
       })

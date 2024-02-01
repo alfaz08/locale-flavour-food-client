@@ -18,10 +18,12 @@ const CheckoutForm = () => {
  const axiosSecure =useAxiosSecure()
  const [clientSecret,setClientSecret] =useState('')
  const [cart,refetch] =useCart()
+ console.log(cart);
  const {user} =useAuth()
+
  const [transactionId,setTransactionId]=useState('')
  const normalizedUserInfo =useProfile()
- console.log(normalizedUserInfo);
+
  const totalPrice =cart.reduce((total,item)=>total+item.spendMoney,0)
  
   const navigate = useNavigate()
@@ -99,7 +101,7 @@ const CheckoutForm = () => {
         price:totalPrice,
         date: new Date(),
         cartIds:cart.map(item=>item._id),
-        productIds: cart.map(item=>item.productId),
+        productIds: cart.map(item => ({ productId: item.productId, amount: item.amount, price: item.price,totalPrice:item.spendMoney,shopName:item.shopName,itemName:item.name,image:item.image })),
         name: normalizedUserInfo?.name,
         transactionId: paymentIntent.id,
         status:"pending",

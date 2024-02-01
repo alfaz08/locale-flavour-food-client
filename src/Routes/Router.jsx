@@ -32,6 +32,7 @@ import Payment from "../pages/Dashboard/User/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/User/Payment/PaymentHistory";
 import ShopList from "../pages/ShopList/ShopList";
 import SingleShopDetails from "../pages/SingleShopDetails/SingleShopDetails";
+import Invoice from "../pages/Dashboard/User/Invoice/Invoice";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -116,6 +117,10 @@ const router = createBrowserRouter([
       {
         path:'userPaymentHistory',
         element:  <PaymentHistory></PaymentHistory>,
+      },
+      {
+        path:'invoice/:id',
+        element:  <Invoice></Invoice>,
       },
      
 

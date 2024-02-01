@@ -2,10 +2,12 @@
 import { FaTrashAlt } from 'react-icons/fa';
 import usePaymentHistory from '../../../../hooks/usePaymentHistory';
 import { FaUserShield } from 'react-icons/fa6';
+import { LiaFileInvoiceSolid } from "react-icons/lia";
+import { Link } from 'react-router-dom';
 
 const PaymentHistory = () => {
   const [myPayments] =usePaymentHistory()
-  console.log(myPayments);
+  
   
   return (
     <div>
@@ -21,6 +23,7 @@ const PaymentHistory = () => {
               <td>Price</td>
               <td>Order Date</td>
               <td>Transaction Id</td>
+              <td>Invoice</td>
               <td>Status</td>
             </tr>
           </thead>
@@ -40,6 +43,12 @@ const PaymentHistory = () => {
                 
                 
                 <td>{user.transactionId}</td>
+                <td>
+
+                  <Link to={`/dashboard/invoice/${user._id}`}>
+                  <button ><LiaFileInvoiceSolid className='text-4xl' /></button>
+                  </Link>
+                </td>
                 <td>{
                 user.status ==='pending'? 
                 <h2 className='bg-red-300 p-4 text-center rounded-lg'>pending</h2>

@@ -152,6 +152,8 @@ const UserCart = () => {
       <h2 className="text-xl">$ {totalPrice}</h2>
     </div>
     <div>
+     {
+      cart.length>0 ?
       <Link to="/dashboard/userPayment">
       <button
       
@@ -159,6 +161,14 @@ const UserCart = () => {
         Proceed To Checkout <MdShoppingCartCheckout className="text-bold" />
       </button>
       </Link>
+      :
+      <button
+      
+      disabled
+       className=" btn mt-4 font-bold bg-green-300 hover:text-white hover:bg-green-700">
+        Proceed To Checkout <MdShoppingCartCheckout className="text-bold" />
+      </button>
+     }
     </div>
   </div>
 </div>
