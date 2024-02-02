@@ -7,6 +7,7 @@ import Featured from "../../components/Featured/Featured";
 import ServiceTypes from "../../components/ServiceNonFunctional/ServiceTypes";
 import PopularProduct from "../../components/PopularProduct/PopularProduct";
 import Advertise from "../../components/Advertise/Advertise";
+import DealDay from "../../components/DealDay/DealDay";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <Featured></Featured>
       <Advertise></Advertise>
       <PopularProduct></PopularProduct>
+      <DealDay></DealDay>
       <ServiceTypes></ServiceTypes>
       </div>
 

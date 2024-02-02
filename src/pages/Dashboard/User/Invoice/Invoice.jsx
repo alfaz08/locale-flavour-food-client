@@ -9,14 +9,14 @@ import { MdLocalPrintshop } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
 
 
+
 const Invoice = () => {
   const { id } = useParams();
-  console.log("id", id);
-
   const [invoice] = usePaymentInvoice();
-  console.log("invoice", invoice);
-  // const myInvoice = invoice?.filter(item=>item?._id===id)
-  // console.log('this',myInvoice);
+
+  
+
+  
 
   return (
     <div className="container mx-auto">
@@ -186,7 +186,7 @@ const Invoice = () => {
       <div className="mt-20 flex justify-center gap-4">
         <div>
         <button
-             
+          
             className="btn bg-blue-900 text-white hover:text-white hover:bg-green-700">
               <span>
               <MdLocalPrintshop />
