@@ -8,6 +8,8 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
+import CustomerReview from "./CustomerReview";
+import AddReview from "./AddReview";
 
 
 const SingleProductDetails = () => {
@@ -36,7 +38,7 @@ const SingleProductDetails = () => {
     shopName,
   } = singleProduct;
   
-  
+  const id=5;
   // Check if productQuantity is defined and has value and unit properties
   const productQuantityValue = productQuantity?.value;
   const productQuantityUnit = productQuantity?.unit;
@@ -214,24 +216,8 @@ const SingleProductDetails = () => {
         <h2 >Total Review:</h2>
         </div>
 
-        <div>
-       <h2 className="p-2">
-        Customer Review
-       </h2>
-
-        <div className="mb-4 mt-4 ml-4 border border-green-500 flex gap-6">
-          <h2>image</h2>
-          <div>
-          <div className="flex gap-12">
-          <h2>time</h2>
-          <h2>rating</h2>
-          </div>
-          <h2>text</h2>
-          </div>
-        </div>
-
-        </div>
-               
+        <CustomerReview></CustomerReview>
+        <AddReview  singleProduct={singleProduct}></AddReview>
               </div>
 
 
