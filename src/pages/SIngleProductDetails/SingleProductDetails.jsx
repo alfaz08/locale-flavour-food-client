@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
 import CustomerReview from "./CustomerReview";
 import AddReview from "./AddReview";
+import useComment from "../../hooks/useComment";
 
 
 const SingleProductDetails = () => {
@@ -20,6 +21,13 @@ const SingleProductDetails = () => {
    const [,refetch]=useCart() 
   const axiosSecure =useAxiosSecure()
    const navigate =useNavigate()
+
+   const [comments,commentRefetch] =useComment()
+   
+
+
+
+
    const {
     _id,
     email,
@@ -38,14 +46,14 @@ const SingleProductDetails = () => {
     shopName,
   } = singleProduct;
   
-  const id=5;
+
   // Check if productQuantity is defined and has value and unit properties
   const productQuantityValue = productQuantity?.value;
   const productQuantityUnit = productQuantity?.unit;
   
   
 
- console.log(productQuantityValue);
+ 
 
 
 
@@ -79,9 +87,10 @@ const SingleProductDetails = () => {
           spendMoney:money,
           amount:amount,
           price:productPrice,
-          shopName: shopName
+          shopName: shopName,
+          shopEmail: email
       }
-      console.log(cartItem);
+      
       axiosSecure.post('/carts',cartItem)
       .then(res=>{
         console.log(res.data);
@@ -210,14 +219,24 @@ const SingleProductDetails = () => {
       </div>
 
 
-      <div className="border border-red-600">
+      <div className="border border-gray-200 mt-4 rounded-lg">
 
         <div className="border-green-600 rounded-b-full mt-4" >
-        <h2 >Total Review:</h2>
+        <h2 className="text-2xl font-bold">Total Review({comments.length})</h2>
         </div>
 
-        <CustomerReview></CustomerReview>
-        <AddReview  singleProduct={singleProduct}></AddReview>
+        <div className="grid grid-cols-1 md:grid-cols-4">
+          <div className=" col-span-2">
+          <CustomerReview  comments= {comments}></CustomerReview>
+        <AddReview commentRefetch={commentRefetch} singleProduct={singleProduct}></AddReview>
+          </div>
+          <div className=" col-span-2">
+            Total Rating
+          </div>
+        </div>
+            
+            
+            
               </div>
 
 

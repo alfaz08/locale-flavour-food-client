@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { FaStar } from "react-icons/fa"; // Import the star icon from your preferred icon library
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const AddReview = ({singleProduct}) => {
+const AddReview = ({singleProduct,commentRefetch}) => {
 
   const {user} =useAuth()
   
@@ -46,6 +46,7 @@ const AddReview = ({singleProduct}) => {
         showConfirmButton: false,
         timer: 1500,
       });
+      commentRefetch()
     }
 
     
@@ -64,7 +65,9 @@ const AddReview = ({singleProduct}) => {
   return (
     <div>
       <h2 className="text-4xl mt-16 p-4 font-bold">Add a Review</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="card-body max-w-6xl">
+
+
+      <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         <div className="form-control">
           <label className="label">Review</label>
           <textarea
@@ -90,14 +93,31 @@ const AddReview = ({singleProduct}) => {
           </div>
         </div>
 
+      
+      
+
+
         <div className="form-control mt-6">
-          <input
+          {
+            user ? 
+            <input
             className="btn max-w-sm text-xl bg-green-300 hover:text-white hover:bg-black"
             type="submit"
             value="Submit Review"
           />
+          :
+          <Link to="/login">
+            <input
+            className="btn max-w-sm text-xl bg-green-300 hover:text-white hover:bg-black"
+            type="submit"
+            value="Submit Review"
+          />
+          </Link>
+          }
         </div>
       </form>
+
+      
     </div>
   );
 };

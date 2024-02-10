@@ -101,7 +101,7 @@ const CheckoutForm = () => {
         price:totalPrice,
         date: new Date(),
         cartIds:cart.map(item=>item._id),
-        productIds: cart.map(item => ({ productId: item.productId, amount: item.amount, price: item.price,totalPrice:item.spendMoney,shopName:item.shopName,itemName:item.name,image:item.image })),
+        productIds: cart.map(item => ({ productId: item.productId, amount: item.amount, price: item.price,totalPrice:item.spendMoney,shopName:item.shopName,shopEmail:item.shopEmail,itemName:item.name,image:item.image })),
         name: normalizedUserInfo?.name,
         transactionId: paymentIntent.id,
         status:"pending",
