@@ -33,6 +33,7 @@ import PaymentHistory from "../pages/Dashboard/User/Payment/PaymentHistory";
 import ShopList from "../pages/ShopList/ShopList";
 import SingleShopDetails from "../pages/SingleShopDetails/SingleShopDetails";
 import Invoice from "../pages/Dashboard/User/Invoice/Invoice";
+import Review from "../pages/Dashboard/Vendor/VendorProduct/Review";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -168,6 +169,10 @@ const router = createBrowserRouter([
       {
         path: 'payment',
         element: <Membership></Membership>
+      },
+      {
+        path: 'review/:id',
+        element: <Review></Review>
       },
       
     ]

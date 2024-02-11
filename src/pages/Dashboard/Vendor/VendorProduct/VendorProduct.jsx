@@ -5,6 +5,7 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import SectionTitle from "../../../../shared/SectionTitle/SectionTitle";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const VendorProduct = () => {
   const [myProduct,refetch] =useMyProduct()
@@ -42,6 +43,7 @@ const VendorProduct = () => {
       }
     })
   }
+  
 
 
 
@@ -91,15 +93,20 @@ const VendorProduct = () => {
           </div>
       </td>
      
-
+   <td>15</td>
      {/* <td>{product.productQuantity.value} {product.productQuantity.unit}</td> */}
       <td>{product.productionCost}</td>
       <td>{product.profitMargin}%</td>
       <td>{product.productPrice}</td>
    
       <td>
-       <button className="btn bg-green-400"><IoChatbubbleEllipses className="" />
+       <Link to={`/dashboard/review/${product._id}`}>
+       <button 
+       
+       className="btn bg-green-400">
+        <IoChatbubbleEllipses className="" />
 </button>
+       </Link>
       </td>
       <th>
           <button
