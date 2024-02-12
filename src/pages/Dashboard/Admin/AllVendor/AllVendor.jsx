@@ -7,6 +7,7 @@ import { FaUserShield } from "react-icons/fa";
 import { FaShopify } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const AllVendor = () => {
@@ -73,13 +74,18 @@ const AllVendor = () => {
       <td>{user.email}</td>
       
    
+      
+      <Link to={`/shopDetails/${user._id}`}>
       <td>
-       <button className="btn bg-green-400">
+      <button className="btn bg-green-400">
        <FaShopify className="text-red-600"></FaShopify>
 </button>
       </td>
+        </Link>
+       
 
       <td>
+        
           <button
           
            className="btn btn-ghost btn-lg"
