@@ -32,7 +32,8 @@ const SingleProductDetails = () => {
 // For example: [{ rating: 5 }, { rating: 4 }, { rating: 3 }]
 const totalRating = comments.reduce((total, comment) => total + comment.rating, 0);
 
-const averageRating = totalRating / comments.length;
+const averageRating = Math.floor(totalRating / comments.length);
+
 
 console.log("Total Rating:", totalRating);
 console.log("Average Rating:", averageRating);
