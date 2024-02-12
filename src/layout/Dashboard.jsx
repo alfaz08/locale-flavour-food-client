@@ -8,6 +8,7 @@ import useAdmin from "../hooks/useAdmin";
 import useVendor from "../hooks/useVendor";
 import useCart from "../hooks/useCart";
 import { MdHistory } from "react-icons/md";
+import { ImStatsDots } from "react-icons/im";
 
 
 
@@ -108,8 +109,8 @@ const Dashboard = () => {
             </li>
             <li>
               <NavLink to="/dashboard/vendorRevenue">
-              <FaDollarSign className="text-2xl"></FaDollarSign>
-                <h2 className="font-bold">Total Revenue</h2>
+              <ImStatsDots  className="text-2xl"></ImStatsDots >
+                <h2 className="font-bold">Sale Stat</h2>
                 </NavLink>
             </li>
     </div>
