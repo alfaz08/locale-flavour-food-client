@@ -10,7 +10,7 @@ const RatingStar = ({ star }) => {
       starIcons.push(
         <FaStar
           key={i}
-          className={`text-2xl ${i < star ? 'text-gold' : 'text-gray-400'}`}
+          className={`text-2xl ${i < star ? 'text-green-600' : 'text-gray-400'}`}
         />
       );
     }

@@ -11,6 +11,7 @@ import useCart from "../../hooks/useCart";
 import CustomerReview from "./CustomerReview";
 import AddReview from "./AddReview";
 import useComment from "../../hooks/useComment";
+import RatingStar from "./RatingStar";
 
 
 const SingleProductDetails = () => {
@@ -23,8 +24,18 @@ const SingleProductDetails = () => {
    const navigate =useNavigate()
 
    const [comments,commentRefetch] =useComment()
+
+   console.log('all comment',comments);
    
 
+// Assuming comments is an array of objects with a 'rating' property
+// For example: [{ rating: 5 }, { rating: 4 }, { rating: 3 }]
+const totalRating = comments.reduce((total, comment) => total + comment.rating, 0);
+
+const averageRating = totalRating / comments.length;
+
+console.log("Total Rating:", totalRating);
+console.log("Average Rating:", averageRating);
 
 
 
@@ -168,7 +179,7 @@ const SingleProductDetails = () => {
               <div className="p-2">
         
                 <h2 className="font-bold text-2xl mb-2">{productName}</h2>
-                 <h2>Rating(total review)</h2>
+                 <RatingStar star={averageRating}></RatingStar>
                 <h2 className="font-bold text-4xl mt-8 mb-8 text-green-600">${productPrice}</h2>
                 
                 <h2>
