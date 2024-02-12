@@ -118,7 +118,7 @@ const CheckoutForm = () => {
         email: user?.email,
         date: new Date(),
         productIds: cart.map(item=>item.productId),
-        name: normalizedUserInfo?.name,
+        name: user?.displayName,
         status:"pending"
       }
       await axiosSecure.post('/orders',orders)
