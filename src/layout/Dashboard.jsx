@@ -7,6 +7,7 @@ import { useState } from "react";
 import useAdmin from "../hooks/useAdmin";
 import useVendor from "../hooks/useVendor";
 import useCart from "../hooks/useCart";
+import { MdHistory } from "react-icons/md";
 
 
 
@@ -117,36 +118,31 @@ const Dashboard = () => {
       <>
        <div onClick={() => setIsMenuOpen(true)} className={`sm:hidden md:block ${isMenuOpen ? 'hidden' : ''} `}>
        <li>
+              <img src={user?.photoURL} className="h-40 w-40 rounded-full ml-6" alt="" />
+            </li>
+       
+       
+       <li>
               <NavLink to="/dashboard/userHome">
-              <FaHome></FaHome>
-                User Home
+              <FaHome className="text-2xl"></FaHome>
+                <h2 className="font-bold">User Home</h2>
                 </NavLink>
             </li>
             
             <li>
               <NavLink to="/dashboard/userCart">
-              <FaShoppingCart></FaShoppingCart>
-                My Cart ({cart.length})
+              <FaShoppingCart className="text-2xl"></FaShoppingCart>
+               <h2 className="font-bold"> My Cart ({cart.length})</h2>
                 </NavLink>
             </li>
             <li>
               <NavLink to="/dashboard/userPaymentHistory">
-              <FaShoppingCart></FaShoppingCart>
-                Payment History
+              <MdHistory className="text-2xl"/>
+
+               <h2 className="font-bold"> Payment History</h2>
                 </NavLink>
             </li>
-            <li>
-              <NavLink to="/dashboard/review">
-              <FaAd></FaAd>
-                Add a Review
-                </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/bookings">
-              <FaList></FaList>
-                Bookings
-                </NavLink>
-            </li>
+            
        </div>
       </>
      }
