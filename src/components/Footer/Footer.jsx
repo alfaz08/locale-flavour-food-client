@@ -1,4 +1,6 @@
 import { IoLocationSharp } from "react-icons/io5";
+import { MdOutlinePhoneInTalk } from "react-icons/md";
+
 
 import { MdOutlineHeadsetMic } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
@@ -59,17 +61,17 @@ const Footer = () => {
         </div>
 
         <div>
-          <header className="footer-title mt-4">Company</header>
-          <h2 className="mt-3 text-md">About Us</h2>
-          <h2 className="mt-3 text-md">Delivery Information</h2>
-          <h2 className="mt-3 text-md">Privacy Policy</h2>
-          <h2 className="mt-3 text-md">Terms & Conditions</h2>
-          <h2 className="mt-3 text-md">Contact Us</h2>
-          <h2 className="mt-3 text-md">Careers</h2>
+          <header className="footer-title mt-4">Account</header>
+          <h2 className="mt-3 text-md">Sign In</h2>
+          <h2 className="mt-3 text-md">View Cart</h2>
+          <h2 className="mt-3 text-md">My Wishlist</h2>
+          <h2 className="mt-3 text-md">Track My Order</h2>
+          <h2 className="mt-3 text-md">help Ticket</h2>
+          <h2 className="mt-3 text-md">Compare Products</h2>
         </div>
 
         <div>
-          <header className="footer-title mt-4">Company</header>
+          <header className="footer-title mt-4">Popular</header>
           <h2 className="mt-3 text-md">About Us</h2>
           <h2 className="mt-3 text-md">Delivery Information</h2>
           <h2 className="mt-3 text-md">Privacy Policy</h2>
@@ -109,7 +111,7 @@ const Footer = () => {
 
       <div className=" container mx-auto border-t-2   mt-4 divide-x  border-black sm:hidden md:block"></div>
 
-      <div className="container mx-auto mt-2 p-4 grid grid-cols-1 md:grid-cols-2">
+      <div className="container mx-auto mt-2 p-4 grid grid-cols-1 md:grid-cols-3">
         <div>
           <footer className="text-base-content">
             <aside>
@@ -122,6 +124,30 @@ const Footer = () => {
             </aside>
           </footer>
         </div>
+
+ <div className="flex gap-6">
+ <div className="flex gap-2">
+ <MdOutlinePhoneInTalk className="text-5xl mt-2" />
+ <div>
+ <h2 className="font-bold text-2xl">1900 - 8888
+</h2>
+<h2>24/7 Support Center</h2>
+ </div>
+ 
+ </div>
+ <div className="flex gap-2">
+ <MdOutlinePhoneInTalk className="text-5xl mt-2" />
+ <div>
+ <h2 className="font-bold text-2xl">1900 - 6666
+</h2>
+<h2>Working 8:00 - 22:00
+</h2>
+ </div>
+ 
+ </div>
+ 
+
+ </div>
 
         <div className=" ">
           <div className="flex text-md gap-2 justify-center">

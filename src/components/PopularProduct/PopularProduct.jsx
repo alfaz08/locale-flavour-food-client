@@ -27,6 +27,8 @@ const PopularProduct = () => {
   const [allBeverages] =useBeverages()
   const [allSweet] =useSweet()
   const [allSnack] =useSnack()
+
+  
   
   const [selectedCategory, setSelectedCategory] = useState('All');
 

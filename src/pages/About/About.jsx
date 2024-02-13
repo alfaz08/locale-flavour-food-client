@@ -134,9 +134,9 @@ unparalleled food exploration. Dive into a world of flavors,
 
   <div className='col-span-1'>
    <h2 className='font-bold text-green-500 text-xl'>Our Team</h2>
-   <h2 className='text-4xl font-bold mt-4'>Meeet Our Expert Team</h2>
-   <h2 className='text-justify mt-4'>
-   Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.
+   <h2 className='text-4xl font-bold mt-4'>Meet Our Expert Team</h2>
+   <h2 className='text-justify mt-4 text-gray-500'>
+   We have a great team of 150+ members to serve you all time.There are several position in our company.All member give their best to keep you happy.
 
    </h2>
    <button className="btn mt-4  bg-custom-color text-black  bg-green-300 hover:bg-black hover:text-white">View All Members</button>
