@@ -41,7 +41,7 @@ const Login = () => {
       </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-4 lg:ml-36 ">
      <div className="hidden lg:block ">
-       <img className="h-[530px] w-[420px] mt-32" src="https://i.ibb.co/DKWxY2N/login.png" alt="" />
+       <img className="h-[530px] w-[420px] mt-32" src="https://i.ibb.co/WFhXbcZ/620-12-login-icon-iconbunny.jpg" alt="" />
      </div>
      <div className="">
      <div className="hero">

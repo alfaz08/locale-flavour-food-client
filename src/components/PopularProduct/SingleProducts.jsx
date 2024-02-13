@@ -91,7 +91,7 @@ const  SingleProducts  = ({ item }) => {
 
   return (
     <div className="">
-      <div className="card w-60  border mt-4 shadow-xl hover:border border-green-200">
+      <div className="card w-50 md:w-60  border mt-4 shadow-xl hover:border border-green-200">
       <Link to={`/productDetails/${_id}`}>
         <div
           className={`figure relative`}

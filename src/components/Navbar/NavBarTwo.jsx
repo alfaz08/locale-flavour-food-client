@@ -43,7 +43,8 @@ const NavBarTwo = () => {
         null
       }
 
-      {isVendor || isAdmin ? null : (
+      {isVendor || isAdmin ? null : user ?
+      (
         <li className="text-xl">
           <NavLink to="/dashboard/userCart">
             
@@ -56,7 +57,16 @@ const NavBarTwo = () => {
             
           </NavLink>
         </li>
-      )}
+      )
+      :
+      null
+      }
+      <li className="text-xl">
+        <NavLink to="/contact">Contact</NavLink>
+      </li>
+      <li className="text-xl">
+        <NavLink to="/about">About Us</NavLink>
+      </li>
     </>
   );
 

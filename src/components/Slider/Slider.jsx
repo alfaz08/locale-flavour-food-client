@@ -56,23 +56,23 @@ const Slider = () => {
 
 
 
-        <SwiperSlide>
-          {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
+        {/* <SwiperSlide>
+         
           <div className="image-container">
           <img src="https://i.ibb.co/mC14knN/slider-2.png" alt="" />
 <h2 className="font-bold text-lg absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-black ">The best Organic <br /> Products Online</h2>        </div>
           
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         
-        <SwiperSlide>
-          {/* <img  src="https://i.ibb.co/mN994np/1x-1.jpg" alt="" /> */}
+        {/* <SwiperSlide>
+         
           <div className="image-container">
           <img src="https://i.ibb.co/FmPSDFp/slider-1.png" alt="" />
           <h2 className="font-bold text-lg absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-black ">The best Organic <br /> Products Online</h2>
         </div>
           
-        </SwiperSlide>
+        </SwiperSlide> */}
 
 
        

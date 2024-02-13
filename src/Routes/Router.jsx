@@ -34,6 +34,8 @@ import ShopList from "../pages/ShopList/ShopList";
 import SingleShopDetails from "../pages/SingleShopDetails/SingleShopDetails";
 import Invoice from "../pages/Dashboard/User/Invoice/Invoice";
 import Review from "../pages/Dashboard/Vendor/VendorProduct/Review";
+import Contact from "../pages/Contact/Contact";
+import About from "../pages/About/About";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -53,6 +55,16 @@ const router = createBrowserRouter([
       
       path:"signUp",
     element: <SignUp></SignUp>
+    },
+    { 
+      
+      path:"contact",
+    element: <Contact></Contact>
+    },
+    { 
+      
+      path:"about",
+    element: <About></About>
     },
     {
       path:"member",

@@ -11,14 +11,16 @@ const PaymentHistory = () => {
   
   return (
     <div>
-      <div className="flex justify-evenly my-4">
-        <h2>Transaction History List: {myPayments?.length}</h2>
-      </div>
-      <div className="overflow-x-auto">
+      <div className="mx-auto text-center md:w-4/12 my-8">
+     
+     <h3 className="text-3xl uppercase border-green-400 border-y-4 py-4">Transaction History List: {myPayments?.length}</h3>
+   </div>
+      
+      <div className="overflow-x-auto ml-2 mr-2 rounded-lg">
         <table className="table table-zebra ">
           {/* head */}
-          <thead>
-            <tr>
+          <thead className='bg-green-300'>
+            <tr className='text-lg text-black'>
               <th>#</th>
               <td>Price</td>
               <td>Order Date</td>

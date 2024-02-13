@@ -55,8 +55,12 @@ const UserCart = () => {
 
   return (
     <div className="mt-6">
+      <div className="mx-auto text-center border-green-400 border-y-4 py-4 md:w-4/12 my-8">
       <h2 className="text-4xl">Your Product</h2>
-      <h2 className=" mt-4">There are {cart.length} products in your cart</h2>
+      <h2 className=" mt-4 text-xl">There are {cart.length} products in your cart</h2>
+   </div>
+     
+    
      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
       <div className="ml-2 rounded-2xl col-span-3 border border-green-300">
       <div className="overflow-x-auto">

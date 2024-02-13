@@ -35,7 +35,7 @@ const Footer = () => {
               <MdEmail className="text-md mt-1" />
               <span className="font-bold text-mdg">
                 Email:{" "}
-                <span className=" font-normal">localefood@gmail.com</span>
+                <span className="  font-bold">localefood@gmail.com</span>
               </span>
             </h2>
             <h2 className="flex">

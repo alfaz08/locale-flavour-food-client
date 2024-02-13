@@ -93,7 +93,7 @@ const [,refetch]=useCart()
 
   return (
     <div className="">
-      <div className="card w-56 border mt-4 shadow-xl hover:border border-green-200">
+      <div className="card md:w-56 border mt-4 shadow-xl hover:border border-green-200">
       <Link to={`/productDetails/${_id}`}>
         <div
           className={`figure relative`}

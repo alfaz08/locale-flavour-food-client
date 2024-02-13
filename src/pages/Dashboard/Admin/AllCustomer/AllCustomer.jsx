@@ -61,14 +61,16 @@ const AllCustomer = () => {
 
   return (
     <div>
-      <div className="flex justify-evenly my-4">
-        <h2>User List: {allCustomer?.length}</h2>
-      </div>
-      <div className="overflow-x-auto">
+      <div className="mx-auto text-center border-green-400 border-y-4 py-4 md:w-4/12 my-8">
+    <h3 className="text-3xl uppercase ">User List: {allCustomer?.length}</h3>
+   
+    </div>
+      
+      <div className="overflow-x-auto ml-2 mr-2 rounded-lg">
         <table className="table table-zebra ">
           {/* head */}
-          <thead>
-            <tr>
+          <thead className="bg-green-300">
+            <tr className="text-lg text-black">
               <th>#</th>
               <td>Name</td>
               <td>Roll</td>

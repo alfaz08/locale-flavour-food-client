@@ -57,11 +57,11 @@ const VendorProduct = () => {
     </div>
     
    
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto ml-2 mr-2 rounded-lg">
 <table className="table table-zebra">
   {/* head */}
-  <thead>
-    <tr>
+  <thead className="bg-green-300">
+    <tr className="text-lg text-black">
     <th>#</th>
       <td>Name</td>
       <td>Image</td>
