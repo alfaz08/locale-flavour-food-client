@@ -8,6 +8,7 @@ import ServiceTypes from "../../components/ServiceNonFunctional/ServiceTypes";
 import PopularProduct from "../../components/PopularProduct/PopularProduct";
 import Advertise from "../../components/Advertise/Advertise";
 import DealDay from "../../components/DealDay/DealDay";
+import StayHome from "../../components/StayHome/StayHome";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <Advertise></Advertise>
       <PopularProduct></PopularProduct>
       <DealDay></DealDay>
+      <StayHome></StayHome>
       <ServiceTypes></ServiceTypes>
       </div>
 

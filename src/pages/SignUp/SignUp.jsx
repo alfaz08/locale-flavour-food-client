@@ -72,9 +72,7 @@ const SignUp = () => {
   return (
     <>
     <div>
-    <Helmet>
-        <title>Locale Food | SignUp</title>
-      </Helmet>
+   
    {
     loggedIn && <Navigate to="/"></Navigate>
    }

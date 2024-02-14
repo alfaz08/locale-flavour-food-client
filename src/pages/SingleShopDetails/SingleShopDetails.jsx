@@ -1,14 +1,10 @@
-import { Helmet } from "react-helmet-async";
+
 import useAllProduct from "../../hooks/useAllProduct";
 import useShopDetails from "../../hooks/useShopDetails";
-import { Link } from "react-router-dom";
+
 import { CiLocationOn } from "react-icons/ci";
 import { LuPhoneCall } from "react-icons/lu";
-import { IoLocationSharp } from "react-icons/io5";
 
-import { MdOutlineHeadsetMic } from "react-icons/md";
-import { MdEmail } from "react-icons/md";
-import { MdOutlineWatchLater } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io5";
@@ -40,9 +36,7 @@ const SingleShopDetails = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto mt-4 text-white">
-      <Helmet>
-        <title>Locale Food | Beverage Products</title>
-      </Helmet>
+     
       <div
         className="hero rounded-xl"
         style={{

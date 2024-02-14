@@ -186,8 +186,9 @@ console.log("Average Rating:", averageRating);
                 <h2>
                   {productDetails}
                 </h2>
-                <h2 className="mt-4 mb-4">
-                  Size/Weight: {productQuantityUnit}
+                <h2 className="mt-4 mb-4 ">
+                  <span className="text-xl">Size/Weight: </span> <span className="text-xl font-bold uppercase">
+                  {productQuantityUnit}</span>
                 </h2>
 
 
@@ -243,7 +244,7 @@ console.log("Average Rating:", averageRating);
         <AddReview commentRefetch={commentRefetch} singleProduct={singleProduct}></AddReview>
           </div>
           <div className=" col-span-2">
-            Total Rating
+            
           </div>
         </div>
             

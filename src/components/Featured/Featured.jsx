@@ -21,7 +21,7 @@ const Clients = () => {
      </div>
 
       <div>
-      <div className="flex mt-10 gap-">
+      <div className="flex mt-10 gap-2">
       <div>
       <FaArrowCircleLeft  className="text-4xl"/>
       </div>
@@ -156,22 +156,7 @@ const Clients = () => {
             </div>
           </Link>
         </SwiperSlide>
-        <SwiperSlide id="image">
-          <Link to="/login">
-            <div className="card w-52 h-60 border  border-gray-300  shadow-xl hover:bg-green-100 hover:border hover:border-green-200 hover:text-green-500">
-              <figure className="px-10 pt-10">
-                <img
-                  src="https://i.ibb.co/pwqLZMZ/hand-drawn-fast-food-set-53876-97420.jpg"
-                  alt="Shoes"
-                  className="rounded-xl"
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title">Fast Foods</h2>
-              </div>
-            </div>
-          </Link>
-        </SwiperSlide>
+        
       
         
       </Swiper>

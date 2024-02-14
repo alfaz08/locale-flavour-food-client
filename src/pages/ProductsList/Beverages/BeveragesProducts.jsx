@@ -27,9 +27,7 @@ const BeveragesProducts = () => {
     
 
     <div className="max-w-screen-2xl mx-auto mt-4">
-      <Helmet>
-        <title>Locale Food | Beverage Products</title>
-      </Helmet>
+     
       <div
         className="hero rounded-xl"
         style={{

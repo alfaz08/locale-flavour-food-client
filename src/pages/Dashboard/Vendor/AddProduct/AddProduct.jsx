@@ -82,7 +82,7 @@ const AddProduct = () => {
     const unitMapping = {
       beverage: "liter",
       fruit: "kg",
-      bakery: "piece",
+      bakery: "kg",
       milk: "liter",
       sweet:"kg",
       vegetable:"kg",
@@ -91,15 +91,13 @@ const AddProduct = () => {
       // Add more category mappings as needed
     };
 
-    return unitMapping[category] || "default";
+    return unitMapping[category] || "piece";
   };
 
   return (
     <>
       <div>
-        <Helmet>
-          <title>Locale Food | Add Product</title>
-        </Helmet>
+       
         <SectionTitle heading="add an item" subHeading="What's new?" />
       </div>
 

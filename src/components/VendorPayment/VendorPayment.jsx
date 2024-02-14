@@ -66,9 +66,7 @@ const VendorPayment = () => {
   return (
     <>
     <div>
-    <Helmet>
-        <title>Locale Food | SignUp</title>
-      </Helmet>
+    
    
   
 <div className="hero ">
